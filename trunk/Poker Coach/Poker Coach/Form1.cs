@@ -15,5 +15,6 @@ namespace Poker_Coach
         {
             InitializeComponent();
         }
+
     }
 }
