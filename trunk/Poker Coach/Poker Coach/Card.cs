@@ -13,7 +13,7 @@ public enum SUITS
 
 public enum CARDVALUE
 {
-    ACE = 1,
+    A = 1,
     TWO = 2,
     THREE = 3,
     FOUR = 4,
@@ -23,9 +23,9 @@ public enum CARDVALUE
     EIGHT = 8,
     NINE = 9,
     TEN = 10,
-    JACK = 11,
-    QUEEN = 12,
-    KING = 13
+    J = 11,
+    Q = 12,
+    K = 13
 };
 
 namespace Poker_Coach
@@ -59,6 +59,11 @@ namespace Poker_Coach
         public void setValue(CARDVALUE v)
         {
             value = v;
+        }
+
+        public override string ToString()
+        {
+            return value + " of " + suit;
         }
     }
 }
