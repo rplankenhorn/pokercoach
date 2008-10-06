@@ -29,23 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmdHoleUpdate = new System.Windows.Forms.Button();
             this.cbbxCardSuit2 = new System.Windows.Forms.ComboBox();
             this.cbbxCardValue2 = new System.Windows.Forms.ComboBox();
             this.cbbxCardSuit1 = new System.Windows.Forms.ComboBox();
             this.cbbxCardValue1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cmdFlopUpdate = new System.Windows.Forms.Button();
+            this.cbbxFlopCard3Suit = new System.Windows.Forms.ComboBox();
+            this.cbbxFlopCard3Value = new System.Windows.Forms.ComboBox();
+            this.cbbxFlopCard2Suit = new System.Windows.Forms.ComboBox();
+            this.cbbxFlopCard1Value = new System.Windows.Forms.ComboBox();
+            this.cbbxFlopCard2Value = new System.Windows.Forms.ComboBox();
+            this.cbbxFlopCard1Suit = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.cbbxTurnCardValue = new System.Windows.Forms.ComboBox();
+            this.cbbxTurnCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
+            this.cbbxRiverCardValue = new System.Windows.Forms.ComboBox();
+            this.cbbxRiverCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNumOfOpponents = new System.Windows.Forms.TextBox();
@@ -72,7 +74,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.cmdUpdate = new System.Windows.Forms.Button();
+            this.cmdTurnUpdate = new System.Windows.Forms.Button();
+            this.cmdRiverUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,16 +87,27 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmdHoleUpdate);
             this.groupBox1.Controls.Add(this.cbbxCardSuit2);
             this.groupBox1.Controls.Add(this.cbbxCardValue2);
             this.groupBox1.Controls.Add(this.cbbxCardSuit1);
             this.groupBox1.Controls.Add(this.cbbxCardValue1);
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 114);
+            this.groupBox1.Size = new System.Drawing.Size(288, 88);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Cards";
+            // 
+            // cmdHoleUpdate
+            // 
+            this.cmdHoleUpdate.Location = new System.Drawing.Point(162, 24);
+            this.cmdHoleUpdate.Name = "cmdHoleUpdate";
+            this.cmdHoleUpdate.Size = new System.Drawing.Size(120, 55);
+            this.cmdHoleUpdate.TabIndex = 4;
+            this.cmdHoleUpdate.Text = "Update";
+            this.cmdHoleUpdate.UseVisualStyleBackColor = true;
+            this.cmdHoleUpdate.Click += new System.EventHandler(this.cmdHoleUpdate_Click);
             // 
             // cbbxCardSuit2
             // 
@@ -103,7 +117,7 @@
             "Diamonds",
             "Hearts",
             "Spades"});
-            this.cbbxCardSuit2.Location = new System.Drawing.Point(189, 37);
+            this.cbbxCardSuit2.Location = new System.Drawing.Point(55, 58);
             this.cbbxCardSuit2.Name = "cbbxCardSuit2";
             this.cbbxCardSuit2.Size = new System.Drawing.Size(85, 21);
             this.cbbxCardSuit2.TabIndex = 3;
@@ -125,7 +139,7 @@
             "Q",
             "K",
             "A"});
-            this.cbbxCardValue2.Location = new System.Drawing.Point(146, 37);
+            this.cbbxCardValue2.Location = new System.Drawing.Point(12, 58);
             this.cbbxCardValue2.Name = "cbbxCardValue2";
             this.cbbxCardValue2.Size = new System.Drawing.Size(37, 21);
             this.cbbxCardValue2.TabIndex = 2;
@@ -138,7 +152,7 @@
             "DIAMONDS",
             "HEARTS",
             "SPADES"});
-            this.cbbxCardSuit1.Location = new System.Drawing.Point(55, 37);
+            this.cbbxCardSuit1.Location = new System.Drawing.Point(55, 24);
             this.cbbxCardSuit1.Name = "cbbxCardSuit1";
             this.cbbxCardSuit1.Size = new System.Drawing.Size(85, 21);
             this.cbbxCardSuit1.TabIndex = 1;
@@ -160,43 +174,54 @@
             "Q",
             "K",
             "A"});
-            this.cbbxCardValue1.Location = new System.Drawing.Point(12, 37);
+            this.cbbxCardValue1.Location = new System.Drawing.Point(12, 24);
             this.cbbxCardValue1.Name = "cbbxCardValue1";
             this.cbbxCardValue1.Size = new System.Drawing.Size(37, 21);
             this.cbbxCardValue1.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox9);
-            this.groupBox2.Controls.Add(this.comboBox10);
-            this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Controls.Add(this.comboBox8);
-            this.groupBox2.Controls.Add(this.comboBox6);
-            this.groupBox2.Controls.Add(this.comboBox7);
+            this.groupBox2.Controls.Add(this.cmdFlopUpdate);
+            this.groupBox2.Controls.Add(this.cbbxFlopCard3Suit);
+            this.groupBox2.Controls.Add(this.cbbxFlopCard3Value);
+            this.groupBox2.Controls.Add(this.cbbxFlopCard2Suit);
+            this.groupBox2.Controls.Add(this.cbbxFlopCard1Value);
+            this.groupBox2.Controls.Add(this.cbbxFlopCard2Value);
+            this.groupBox2.Controls.Add(this.cbbxFlopCard1Suit);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(239, 100);
+            this.groupBox2.Size = new System.Drawing.Size(328, 100);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Flop";
             // 
-            // comboBox9
+            // cmdFlopUpdate
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
+            this.cmdFlopUpdate.Location = new System.Drawing.Point(238, 31);
+            this.cmdFlopUpdate.Name = "cmdFlopUpdate";
+            this.cmdFlopUpdate.Size = new System.Drawing.Size(84, 48);
+            this.cmdFlopUpdate.TabIndex = 10;
+            this.cmdFlopUpdate.Text = "Update";
+            this.cmdFlopUpdate.UseVisualStyleBackColor = true;
+            this.cmdFlopUpdate.Click += new System.EventHandler(this.cmdFlopUpdate_Click);
+            // 
+            // cbbxFlopCard3Suit
+            // 
+            this.cbbxFlopCard3Suit.FormattingEnabled = true;
+            this.cbbxFlopCard3Suit.Items.AddRange(new object[] {
             "Clubs",
             "Diamonds",
             "Hearts",
             "Spades"});
-            this.comboBox9.Location = new System.Drawing.Point(162, 58);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(71, 21);
-            this.comboBox9.TabIndex = 9;
+            this.cbbxFlopCard3Suit.Location = new System.Drawing.Point(162, 58);
+            this.cbbxFlopCard3Suit.Name = "cbbxFlopCard3Suit";
+            this.cbbxFlopCard3Suit.Size = new System.Drawing.Size(71, 21);
+            this.cbbxFlopCard3Suit.TabIndex = 9;
             // 
-            // comboBox10
+            // cbbxFlopCard3Value
             // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
+            this.cbbxFlopCard3Value.FormattingEnabled = true;
+            this.cbbxFlopCard3Value.Items.AddRange(new object[] {
             "2",
             "3",
             "4",
@@ -210,28 +235,28 @@
             "Q",
             "K",
             "A"});
-            this.comboBox10.Location = new System.Drawing.Point(159, 31);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(37, 21);
-            this.comboBox10.TabIndex = 8;
+            this.cbbxFlopCard3Value.Location = new System.Drawing.Point(162, 31);
+            this.cbbxFlopCard3Value.Name = "cbbxFlopCard3Value";
+            this.cbbxFlopCard3Value.Size = new System.Drawing.Size(37, 21);
+            this.cbbxFlopCard3Value.TabIndex = 8;
             // 
-            // comboBox5
+            // cbbxFlopCard2Suit
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cbbxFlopCard2Suit.FormattingEnabled = true;
+            this.cbbxFlopCard2Suit.Items.AddRange(new object[] {
             "Clubs",
             "Diamonds",
             "Hearts",
             "Spades"});
-            this.comboBox5.Location = new System.Drawing.Point(82, 58);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(71, 21);
-            this.comboBox5.TabIndex = 7;
+            this.cbbxFlopCard2Suit.Location = new System.Drawing.Point(82, 58);
+            this.cbbxFlopCard2Suit.Name = "cbbxFlopCard2Suit";
+            this.cbbxFlopCard2Suit.Size = new System.Drawing.Size(71, 21);
+            this.cbbxFlopCard2Suit.TabIndex = 7;
             // 
-            // comboBox8
+            // cbbxFlopCard1Value
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.cbbxFlopCard1Value.FormattingEnabled = true;
+            this.cbbxFlopCard1Value.Items.AddRange(new object[] {
             "2",
             "3",
             "4",
@@ -245,15 +270,15 @@
             "Q",
             "K",
             "A"});
-            this.comboBox8.Location = new System.Drawing.Point(6, 31);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(37, 21);
-            this.comboBox8.TabIndex = 4;
+            this.cbbxFlopCard1Value.Location = new System.Drawing.Point(6, 31);
+            this.cbbxFlopCard1Value.Name = "cbbxFlopCard1Value";
+            this.cbbxFlopCard1Value.Size = new System.Drawing.Size(37, 21);
+            this.cbbxFlopCard1Value.TabIndex = 4;
             // 
-            // comboBox6
+            // cbbxFlopCard2Value
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.cbbxFlopCard2Value.FormattingEnabled = true;
+            this.cbbxFlopCard2Value.Items.AddRange(new object[] {
             "2",
             "3",
             "4",
@@ -267,39 +292,40 @@
             "Q",
             "K",
             "A"});
-            this.comboBox6.Location = new System.Drawing.Point(79, 31);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(37, 21);
-            this.comboBox6.TabIndex = 6;
+            this.cbbxFlopCard2Value.Location = new System.Drawing.Point(82, 31);
+            this.cbbxFlopCard2Value.Name = "cbbxFlopCard2Value";
+            this.cbbxFlopCard2Value.Size = new System.Drawing.Size(37, 21);
+            this.cbbxFlopCard2Value.TabIndex = 6;
             // 
-            // comboBox7
+            // cbbxFlopCard1Suit
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.cbbxFlopCard1Suit.FormattingEnabled = true;
+            this.cbbxFlopCard1Suit.Items.AddRange(new object[] {
             "Clubs",
             "Diamonds",
             "Hearts",
             "Spades"});
-            this.comboBox7.Location = new System.Drawing.Point(6, 58);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(71, 21);
-            this.comboBox7.TabIndex = 5;
+            this.cbbxFlopCard1Suit.Location = new System.Drawing.Point(6, 58);
+            this.cbbxFlopCard1Suit.Name = "cbbxFlopCard1Suit";
+            this.cbbxFlopCard1Suit.Size = new System.Drawing.Size(71, 21);
+            this.cbbxFlopCard1Suit.TabIndex = 5;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox11);
-            this.groupBox3.Controls.Add(this.comboBox12);
-            this.groupBox3.Location = new System.Drawing.Point(257, 12);
+            this.groupBox3.Controls.Add(this.cmdTurnUpdate);
+            this.groupBox3.Controls.Add(this.cbbxTurnCardValue);
+            this.groupBox3.Controls.Add(this.cbbxTurnCardSuit);
+            this.groupBox3.Location = new System.Drawing.Point(346, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(84, 100);
+            this.groupBox3.Size = new System.Drawing.Size(175, 100);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Turn";
             // 
-            // comboBox11
+            // cbbxTurnCardValue
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Items.AddRange(new object[] {
+            this.cbbxTurnCardValue.FormattingEnabled = true;
+            this.cbbxTurnCardValue.Items.AddRange(new object[] {
             "2",
             "3",
             "4",
@@ -313,39 +339,40 @@
             "Q",
             "K",
             "A"});
-            this.comboBox11.Location = new System.Drawing.Point(6, 31);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(37, 21);
-            this.comboBox11.TabIndex = 10;
+            this.cbbxTurnCardValue.Location = new System.Drawing.Point(6, 31);
+            this.cbbxTurnCardValue.Name = "cbbxTurnCardValue";
+            this.cbbxTurnCardValue.Size = new System.Drawing.Size(37, 21);
+            this.cbbxTurnCardValue.TabIndex = 10;
             // 
-            // comboBox12
+            // cbbxTurnCardSuit
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
+            this.cbbxTurnCardSuit.FormattingEnabled = true;
+            this.cbbxTurnCardSuit.Items.AddRange(new object[] {
             "Clubs",
             "Diamonds",
             "Hearts",
             "Spades"});
-            this.comboBox12.Location = new System.Drawing.Point(6, 58);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(71, 21);
-            this.comboBox12.TabIndex = 11;
+            this.cbbxTurnCardSuit.Location = new System.Drawing.Point(6, 58);
+            this.cbbxTurnCardSuit.Name = "cbbxTurnCardSuit";
+            this.cbbxTurnCardSuit.Size = new System.Drawing.Size(71, 21);
+            this.cbbxTurnCardSuit.TabIndex = 11;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.comboBox13);
-            this.groupBox4.Controls.Add(this.comboBox14);
-            this.groupBox4.Location = new System.Drawing.Point(347, 12);
+            this.groupBox4.Controls.Add(this.cmdRiverUpdate);
+            this.groupBox4.Controls.Add(this.cbbxRiverCardValue);
+            this.groupBox4.Controls.Add(this.cbbxRiverCardSuit);
+            this.groupBox4.Location = new System.Drawing.Point(527, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(84, 100);
+            this.groupBox4.Size = new System.Drawing.Size(178, 100);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "River";
             // 
-            // comboBox13
+            // cbbxRiverCardValue
             // 
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Items.AddRange(new object[] {
+            this.cbbxRiverCardValue.FormattingEnabled = true;
+            this.cbbxRiverCardValue.Items.AddRange(new object[] {
             "2",
             "3",
             "4",
@@ -359,23 +386,23 @@
             "Q",
             "K",
             "A"});
-            this.comboBox13.Location = new System.Drawing.Point(6, 31);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(37, 21);
-            this.comboBox13.TabIndex = 6;
+            this.cbbxRiverCardValue.Location = new System.Drawing.Point(6, 31);
+            this.cbbxRiverCardValue.Name = "cbbxRiverCardValue";
+            this.cbbxRiverCardValue.Size = new System.Drawing.Size(37, 21);
+            this.cbbxRiverCardValue.TabIndex = 6;
             // 
-            // comboBox14
+            // cbbxRiverCardSuit
             // 
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Items.AddRange(new object[] {
+            this.cbbxRiverCardSuit.FormattingEnabled = true;
+            this.cbbxRiverCardSuit.Items.AddRange(new object[] {
             "Clubs",
             "Diamonds",
             "Hearts",
             "Spades"});
-            this.comboBox14.Location = new System.Drawing.Point(6, 58);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(71, 21);
-            this.comboBox14.TabIndex = 7;
+            this.cbbxRiverCardSuit.Location = new System.Drawing.Point(6, 58);
+            this.cbbxRiverCardSuit.Name = "cbbxRiverCardSuit";
+            this.cbbxRiverCardSuit.Size = new System.Drawing.Size(71, 21);
+            this.cbbxRiverCardSuit.TabIndex = 7;
             // 
             // groupBox5
             // 
@@ -383,7 +410,7 @@
             this.groupBox5.Controls.Add(this.txtNumOfOpponents);
             this.groupBox5.Controls.Add(this.cmdOppPlus);
             this.groupBox5.Controls.Add(this.cmdOppMinus);
-            this.groupBox5.Location = new System.Drawing.Point(311, 118);
+            this.groupBox5.Location = new System.Drawing.Point(299, 283);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(254, 173);
             this.groupBox5.TabIndex = 4;
@@ -445,7 +472,7 @@
             this.groupBox6.Controls.Add(this.textBox2);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Controls.Add(this.textBox1);
-            this.groupBox6.Location = new System.Drawing.Point(583, 12);
+            this.groupBox6.Location = new System.Drawing.Point(627, 176);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(188, 252);
             this.groupBox6.TabIndex = 5;
@@ -624,22 +651,31 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Status";
             // 
-            // cmdUpdate
+            // cmdTurnUpdate
             // 
-            this.cmdUpdate.Location = new System.Drawing.Point(437, 24);
-            this.cmdUpdate.Name = "cmdUpdate";
-            this.cmdUpdate.Size = new System.Drawing.Size(140, 88);
-            this.cmdUpdate.TabIndex = 4;
-            this.cmdUpdate.Text = "Update";
-            this.cmdUpdate.UseVisualStyleBackColor = true;
-            this.cmdUpdate.Click += new System.EventHandler(this.cmdUpdate_Click);
+            this.cmdTurnUpdate.Location = new System.Drawing.Point(83, 31);
+            this.cmdTurnUpdate.Name = "cmdTurnUpdate";
+            this.cmdTurnUpdate.Size = new System.Drawing.Size(84, 48);
+            this.cmdTurnUpdate.TabIndex = 12;
+            this.cmdTurnUpdate.Text = "Update";
+            this.cmdTurnUpdate.UseVisualStyleBackColor = true;
+            this.cmdTurnUpdate.Click += new System.EventHandler(this.cmdTurnUpdate_Click);
+            // 
+            // cmdRiverUpdate
+            // 
+            this.cmdRiverUpdate.Location = new System.Drawing.Point(83, 31);
+            this.cmdRiverUpdate.Name = "cmdRiverUpdate";
+            this.cmdRiverUpdate.Size = new System.Drawing.Size(84, 48);
+            this.cmdRiverUpdate.TabIndex = 13;
+            this.cmdRiverUpdate.Text = "Update";
+            this.cmdRiverUpdate.UseVisualStyleBackColor = true;
+            this.cmdRiverUpdate.Click += new System.EventHandler(this.cmdRiverUpdate_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 533);
-            this.Controls.Add(this.cmdUpdate);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -671,18 +707,18 @@
         private System.Windows.Forms.ComboBox cbbxCardSuit1;
         private System.Windows.Forms.ComboBox cbbxCardValue1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cbbxFlopCard3Suit;
+        private System.Windows.Forms.ComboBox cbbxFlopCard3Value;
+        private System.Windows.Forms.ComboBox cbbxFlopCard2Suit;
+        private System.Windows.Forms.ComboBox cbbxFlopCard1Value;
+        private System.Windows.Forms.ComboBox cbbxFlopCard2Value;
+        private System.Windows.Forms.ComboBox cbbxFlopCard1Suit;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox cbbxTurnCardValue;
+        private System.Windows.Forms.ComboBox cbbxTurnCardSuit;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.ComboBox comboBox14;
+        private System.Windows.Forms.ComboBox cbbxRiverCardValue;
+        private System.Windows.Forms.ComboBox cbbxRiverCardSuit;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNumOfOpponents;
@@ -709,7 +745,10 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button cmdUpdate;
+        private System.Windows.Forms.Button cmdHoleUpdate;
+        private System.Windows.Forms.Button cmdFlopUpdate;
+        private System.Windows.Forms.Button cmdTurnUpdate;
+        private System.Windows.Forms.Button cmdRiverUpdate;
     }
 }
 
