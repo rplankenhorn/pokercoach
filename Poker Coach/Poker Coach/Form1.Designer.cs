@@ -43,9 +43,11 @@
             this.cbbxFlopCard2Value = new System.Windows.Forms.ComboBox();
             this.cbbxFlopCard1Suit = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmdTurnUpdate = new System.Windows.Forms.Button();
             this.cbbxTurnCardValue = new System.Windows.Forms.ComboBox();
             this.cbbxTurnCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cmdRiverUpdate = new System.Windows.Forms.Button();
             this.cbbxRiverCardValue = new System.Windows.Forms.ComboBox();
             this.cbbxRiverCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -74,8 +76,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.cmdTurnUpdate = new System.Windows.Forms.Button();
-            this.cmdRiverUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -322,6 +322,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Turn";
             // 
+            // cmdTurnUpdate
+            // 
+            this.cmdTurnUpdate.Location = new System.Drawing.Point(83, 31);
+            this.cmdTurnUpdate.Name = "cmdTurnUpdate";
+            this.cmdTurnUpdate.Size = new System.Drawing.Size(84, 48);
+            this.cmdTurnUpdate.TabIndex = 12;
+            this.cmdTurnUpdate.Text = "Update";
+            this.cmdTurnUpdate.UseVisualStyleBackColor = true;
+            this.cmdTurnUpdate.Click += new System.EventHandler(this.cmdTurnUpdate_Click);
+            // 
             // cbbxTurnCardValue
             // 
             this.cbbxTurnCardValue.FormattingEnabled = true;
@@ -368,6 +378,16 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "River";
+            // 
+            // cmdRiverUpdate
+            // 
+            this.cmdRiverUpdate.Location = new System.Drawing.Point(83, 31);
+            this.cmdRiverUpdate.Name = "cmdRiverUpdate";
+            this.cmdRiverUpdate.Size = new System.Drawing.Size(84, 48);
+            this.cmdRiverUpdate.TabIndex = 13;
+            this.cmdRiverUpdate.Text = "Update";
+            this.cmdRiverUpdate.UseVisualStyleBackColor = true;
+            this.cmdRiverUpdate.Click += new System.EventHandler(this.cmdRiverUpdate_Click);
             // 
             // cbbxRiverCardValue
             // 
@@ -638,6 +658,7 @@
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
+            this.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtStatus.Size = new System.Drawing.Size(241, 97);
             this.txtStatus.TabIndex = 6;
             // 
@@ -650,26 +671,6 @@
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Status";
-            // 
-            // cmdTurnUpdate
-            // 
-            this.cmdTurnUpdate.Location = new System.Drawing.Point(83, 31);
-            this.cmdTurnUpdate.Name = "cmdTurnUpdate";
-            this.cmdTurnUpdate.Size = new System.Drawing.Size(84, 48);
-            this.cmdTurnUpdate.TabIndex = 12;
-            this.cmdTurnUpdate.Text = "Update";
-            this.cmdTurnUpdate.UseVisualStyleBackColor = true;
-            this.cmdTurnUpdate.Click += new System.EventHandler(this.cmdTurnUpdate_Click);
-            // 
-            // cmdRiverUpdate
-            // 
-            this.cmdRiverUpdate.Location = new System.Drawing.Point(83, 31);
-            this.cmdRiverUpdate.Name = "cmdRiverUpdate";
-            this.cmdRiverUpdate.Size = new System.Drawing.Size(84, 48);
-            this.cmdRiverUpdate.TabIndex = 13;
-            this.cmdRiverUpdate.Text = "Update";
-            this.cmdRiverUpdate.UseVisualStyleBackColor = true;
-            this.cmdRiverUpdate.Click += new System.EventHandler(this.cmdRiverUpdate_Click);
             // 
             // Form1
             // 

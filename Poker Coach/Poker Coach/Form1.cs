@@ -79,7 +79,7 @@ namespace Poker_Coach
                 holecards.Add(card2);
 
                 //Output to status
-                txtStatus.Text = holecards[0].ToString();
+                txtStatus.Text += "\r\n\r\nYour hand: " + holecards[0].ToString();
                 txtStatus.Text += " and " + holecards[1].ToString();
             }
         }
@@ -96,7 +96,7 @@ namespace Poker_Coach
 
                 community.Add(turn);
 
-                txtStatus.Text = "Turn Updated: " + turn.ToString();
+                txtStatus.Text += "\r\n\r\nTurn Updated: " + turn.ToString();
             }
         }
 
@@ -112,7 +112,7 @@ namespace Poker_Coach
 
                 community.Add(river);
 
-                txtStatus.Text = "River Updated: " + river.ToString();
+                txtStatus.Text += "\r\n\r\nRiver Updated: " + river.ToString();
             }
         }
     }
