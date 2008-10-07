@@ -58,16 +58,19 @@ namespace Poker_Coach
                 SUITS suit = (SUITS)Enum.Parse(typeof(SUITS), cbbxFlopCard1Suit.SelectedItem.ToString(), true);
 
                 community.Add(new Card(suit, value));
+                cardsLeft[community[0].getSuitInt(), community[0].getValueInt()] = new Card(0, 0);
 
                 value = (CARDVALUE)Enum.Parse(typeof(CARDVALUE), cbbxFlopCard2Value.SelectedItem.ToString(), true);
                 suit = (SUITS)Enum.Parse(typeof(SUITS), cbbxFlopCard2Suit.SelectedItem.ToString(), true);
 
                 community.Add(new Card(suit, value));
+                cardsLeft[community[1].getSuitInt(), community[1].getValueInt()] = new Card(0, 0);
 
                 value = (CARDVALUE)Enum.Parse(typeof(CARDVALUE), cbbxFlopCard3Value.SelectedItem.ToString(), true);
                 suit = (SUITS)Enum.Parse(typeof(SUITS), cbbxFlopCard3Suit.SelectedItem.ToString(), true);
 
                 community.Add(new Card(suit, value));
+                cardsLeft[community[2].getSuitInt(), community[2].getValueInt()] = new Card(0, 0);
 
                 txtStatus.Text += "\r\n\r\nFlop is: " + community[0].ToString() + ", " + community[1].ToString() +
                     ", and " + community[2].ToString();
@@ -80,6 +83,9 @@ namespace Poker_Coach
             if (cbbxCardSuit1.SelectedIndex > -1 && cbbxCardSuit2.SelectedIndex > -1 &&
                 cbbxCardValue1.SelectedIndex > -1 && cbbxCardValue2.SelectedIndex > -1)
             {
+                //Deck Initialize
+                populateCardsLeft();
+
                 //Initialize List
                 holecards = new List<Card>(2);
 
@@ -101,6 +107,9 @@ namespace Poker_Coach
                 holecards.Add(card1);
                 holecards.Add(card2);
 
+                cardsLeft[holecards[0].getSuitInt(), holecards[0].getValueInt()] = new Card(0,0);
+                cardsLeft[holecards[1].getSuitInt(), holecards[1].getValueInt()] = new Card(0,0);
+
                 //Output to status
                 txtStatus.Text += "\r\n\r\nYour hand: " + holecards[0].ToString();
                 txtStatus.Text += " and " + holecards[1].ToString();
@@ -118,6 +127,7 @@ namespace Poker_Coach
                 Card turn = new Card(suit, value);
 
                 community.Add(turn);
+                cardsLeft[community[3].getSuitInt(), community[3].getValueInt()] = new Card(0, 0);
 
                 txtStatus.Text += "\r\n\r\nTurn Updated: " + turn.ToString();
             }
@@ -134,6 +144,7 @@ namespace Poker_Coach
                 Card river = new Card(suit, value);
 
                 community.Add(river);
+                cardsLeft[community[4].getSuitInt(), community[4].getValueInt()] = new Card(0, 0);
 
                 txtStatus.Text += "\r\n\r\nRiver Updated: " + river.ToString();
             }
