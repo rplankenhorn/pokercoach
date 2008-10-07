@@ -18,9 +18,32 @@ namespace Poker_Coach
         //List to store community cards (Flop, turn, river)
         public List<Card> community;
 
+        public Card[,] cardsLeft;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void populateCardsLeft()
+        {
+            //Array for storing cards left in deck.
+            //14: number of cards in suit +1.  Since enum starts at 1.  Easier than always subtracting 1.
+            //5: number of suits + 1.
+            cardsLeft = new Card[5,14];
+
+            int i = 0;
+            int j = 0;
+
+            //Populates two dimmentional array for cards left.
+            //[SUITS,VALUE] follow SUITS Enum and CARDVALUE Enum.
+            for (i = 1; i < 5; i++)
+            {
+                for (j = 1; j < 14; j++)
+                {
+                    cardsLeft[i,j] = new Card((SUITS)i, (CARDVALUE)j);
+                }
+            }
         }
 
         private void cmdFlopUpdate_Click(object sender, EventArgs e)
