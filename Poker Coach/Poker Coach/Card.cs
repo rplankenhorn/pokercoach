@@ -5,6 +5,7 @@ using System.Text;
 
 public enum SUITS
 {
+    INPLAY = 0,
     CLUBS = 1,
     DIAMONDS = 2,
     HEARTS = 3,
@@ -13,6 +14,7 @@ public enum SUITS
 
 public enum CARDVALUE
 {
+    INPLAY = 0,
     A = 1,
     TWO = 2,
     THREE = 3,
@@ -46,6 +48,11 @@ namespace Poker_Coach
             return suit;
         }
 
+        public int getSuitInt()
+        {
+            return (int)suit;
+        }
+
         public void setSuit(SUITS s)
         {
             suit = s;
@@ -54,6 +61,11 @@ namespace Poker_Coach
         public CARDVALUE getValue()
         {
             return value;
+        }
+
+        public int getValueInt()
+        {
+            return (int)value;
         }
 
         public void setValue(CARDVALUE v)
