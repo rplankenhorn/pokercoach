@@ -80,5 +80,3 @@ namespace Poker_Coach
     }
 }
 
-
-// this is a comment to test if SVN is working on Rob's Computer
