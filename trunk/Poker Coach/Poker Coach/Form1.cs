@@ -88,6 +88,7 @@ namespace Poker_Coach
 
                 //Initialize List
                 holecards = new List<Card>(2);
+                double odds;
 
                 //Convert string to ENUM
                 CARDVALUE value = (CARDVALUE)Enum.Parse(typeof(CARDVALUE), cbbxCardValue1.SelectedItem.ToString(), true);
@@ -107,12 +108,16 @@ namespace Poker_Coach
                 holecards.Add(card1);
                 holecards.Add(card2);
 
+                preFlopOdds pre = new preFlopOdds(card1, card2, 8);
+                odds = pre.getOdds();
+
                 cardsLeft[holecards[0].getSuitInt(), holecards[0].getValueInt()] = new Card(0,0);
                 cardsLeft[holecards[1].getSuitInt(), holecards[1].getValueInt()] = new Card(0,0);
 
                 //Output to status
                 txtStatus.Text += "\r\n\r\nYour hand: " + holecards[0].ToString();
                 txtStatus.Text += " and " + holecards[1].ToString();
+                txtStatus.Text += "\r\n\r\nCurrent odds to win: %" + odds.ToString();
             }
         }
 
