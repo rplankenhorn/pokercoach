@@ -51,10 +51,8 @@
             this.cbbxRiverCardValue = new System.Windows.Forms.ComboBox();
             this.cbbxRiverCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.numPlayers = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNumOfOpponents = new System.Windows.Forms.TextBox();
-            this.cmdOppPlus = new System.Windows.Forms.Button();
-            this.cmdOppMinus = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -81,6 +79,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPlayers)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +91,7 @@
             this.groupBox1.Controls.Add(this.cbbxCardValue2);
             this.groupBox1.Controls.Add(this.cbbxCardSuit1);
             this.groupBox1.Controls.Add(this.cbbxCardValue1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 118);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(288, 88);
             this.groupBox1.TabIndex = 0;
@@ -148,10 +147,10 @@
             // 
             this.cbbxCardSuit1.FormattingEnabled = true;
             this.cbbxCardSuit1.Items.AddRange(new object[] {
-            "CLUBS",
-            "DIAMONDS",
-            "HEARTS",
-            "SPADES"});
+            "Clubs",
+            "Diamonds",
+            "Hearts",
+            "Spades"});
             this.cbbxCardSuit1.Location = new System.Drawing.Point(55, 24);
             this.cbbxCardSuit1.Name = "cbbxCardSuit1";
             this.cbbxCardSuit1.Size = new System.Drawing.Size(85, 21);
@@ -188,7 +187,7 @@
             this.groupBox2.Controls.Add(this.cbbxFlopCard1Value);
             this.groupBox2.Controls.Add(this.cbbxFlopCard2Value);
             this.groupBox2.Controls.Add(this.cbbxFlopCard1Suit);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 106);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(328, 100);
             this.groupBox2.TabIndex = 1;
@@ -315,7 +314,7 @@
             this.groupBox3.Controls.Add(this.cmdTurnUpdate);
             this.groupBox3.Controls.Add(this.cbbxTurnCardValue);
             this.groupBox3.Controls.Add(this.cbbxTurnCardSuit);
-            this.groupBox3.Location = new System.Drawing.Point(346, 12);
+            this.groupBox3.Location = new System.Drawing.Point(346, 106);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(175, 100);
             this.groupBox3.TabIndex = 2;
@@ -372,7 +371,7 @@
             this.groupBox4.Controls.Add(this.cmdRiverUpdate);
             this.groupBox4.Controls.Add(this.cbbxRiverCardValue);
             this.groupBox4.Controls.Add(this.cbbxRiverCardSuit);
-            this.groupBox4.Location = new System.Drawing.Point(527, 12);
+            this.groupBox4.Location = new System.Drawing.Point(346, 212);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(178, 100);
             this.groupBox4.TabIndex = 3;
@@ -426,16 +425,31 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.numPlayers);
             this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Controls.Add(this.txtNumOfOpponents);
-            this.groupBox5.Controls.Add(this.cmdOppPlus);
-            this.groupBox5.Controls.Add(this.cmdOppMinus);
-            this.groupBox5.Location = new System.Drawing.Point(299, 283);
+            this.groupBox5.Location = new System.Drawing.Point(306, 17);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(254, 173);
+            this.groupBox5.Size = new System.Drawing.Size(254, 83);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Game Info";
+            // 
+            // numPlayers
+            // 
+            this.numPlayers.Location = new System.Drawing.Point(6, 35);
+            this.numPlayers.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numPlayers.Name = "numPlayers";
+            this.numPlayers.Size = new System.Drawing.Size(120, 20);
+            this.numPlayers.TabIndex = 4;
+            this.numPlayers.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -445,32 +459,6 @@
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "# of Opponents";
-            // 
-            // txtNumOfOpponents
-            // 
-            this.txtNumOfOpponents.Location = new System.Drawing.Point(12, 35);
-            this.txtNumOfOpponents.Name = "txtNumOfOpponents";
-            this.txtNumOfOpponents.Size = new System.Drawing.Size(81, 20);
-            this.txtNumOfOpponents.TabIndex = 2;
-            this.txtNumOfOpponents.Text = "1";
-            // 
-            // cmdOppPlus
-            // 
-            this.cmdOppPlus.Location = new System.Drawing.Point(55, 60);
-            this.cmdOppPlus.Name = "cmdOppPlus";
-            this.cmdOppPlus.Size = new System.Drawing.Size(38, 24);
-            this.cmdOppPlus.TabIndex = 1;
-            this.cmdOppPlus.Text = "+";
-            this.cmdOppPlus.UseVisualStyleBackColor = true;
-            // 
-            // cmdOppMinus
-            // 
-            this.cmdOppMinus.Location = new System.Drawing.Point(12, 60);
-            this.cmdOppMinus.Name = "cmdOppMinus";
-            this.cmdOppMinus.Size = new System.Drawing.Size(38, 24);
-            this.cmdOppMinus.TabIndex = 0;
-            this.cmdOppMinus.Text = "-";
-            this.cmdOppMinus.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -492,7 +480,7 @@
             this.groupBox6.Controls.Add(this.textBox2);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Controls.Add(this.textBox1);
-            this.groupBox6.Location = new System.Drawing.Point(627, 176);
+            this.groupBox6.Location = new System.Drawing.Point(12, 281);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(188, 252);
             this.groupBox6.TabIndex = 5;
@@ -659,15 +647,15 @@
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
             this.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtStatus.Size = new System.Drawing.Size(241, 97);
+            this.txtStatus.Size = new System.Drawing.Size(241, 483);
             this.txtStatus.TabIndex = 6;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.txtStatus);
-            this.groupBox7.Location = new System.Drawing.Point(12, 238);
+            this.groupBox7.Location = new System.Drawing.Point(566, 17);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(254, 125);
+            this.groupBox7.Size = new System.Drawing.Size(254, 504);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Status";
@@ -692,6 +680,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPlayers)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -722,9 +711,6 @@
         private System.Windows.Forms.ComboBox cbbxRiverCardSuit;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNumOfOpponents;
-        private System.Windows.Forms.Button cmdOppPlus;
-        private System.Windows.Forms.Button cmdOppMinus;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
@@ -750,6 +736,7 @@
         private System.Windows.Forms.Button cmdFlopUpdate;
         private System.Windows.Forms.Button cmdTurnUpdate;
         private System.Windows.Forms.Button cmdRiverUpdate;
+        private System.Windows.Forms.NumericUpDown numPlayers;
     }
 }
 

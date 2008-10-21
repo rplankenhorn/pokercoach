@@ -108,7 +108,7 @@ namespace Poker_Coach
                 holecards.Add(card1);
                 holecards.Add(card2);
 
-                preFlopOdds pre = new preFlopOdds(card1, card2, 8);
+                preFlopOdds pre = new preFlopOdds(card1, card2, (int) numPlayers.Value);
                 odds = pre.getOdds();
 
                 cardsLeft[holecards[0].getSuitInt(), holecards[0].getValueInt()] = new Card(0,0);
@@ -117,7 +117,9 @@ namespace Poker_Coach
                 //Output to status
                 txtStatus.Text += "\r\n\r\nYour hand: " + holecards[0].ToString();
                 txtStatus.Text += " and " + holecards[1].ToString();
-                txtStatus.Text += "\r\n\r\nCurrent odds to win: %" + odds.ToString();
+                txtStatus.Text += "\r\n\r\nCurrent pre-flop odds to win: " + odds.ToString() + "%";
+                txtStatus.SelectionStart = txtStatus.Text.Length;
+                txtStatus.ScrollToCaret();
             }
         }
 
