@@ -20,6 +20,10 @@ namespace Poker_Coach
 
         public Card[,] cardsLeft;
 
+        //all of these doubles are percent values
+     
+
+
         public Form1()
         {
             InitializeComponent();
@@ -113,6 +117,17 @@ namespace Poker_Coach
 
                 cardsLeft[holecards[0].getSuitInt(), holecards[0].getValueInt()] = new Card(0,0);
                 cardsLeft[holecards[1].getSuitInt(), holecards[1].getValueInt()] = new Card(0,0);
+                
+                //update preflop hand probabilites, these are hands you can make with the flop ONLY!!!
+                Royal.Text = pre.getRoyal().ToString() + "%";
+                StraightFlush.Text = pre.getStraightFlush().ToString() + "%";
+                Quads.Text = pre.getQuads().ToString() + "%";
+                FullHouse.Text = pre.getFullHouse().ToString() + "%";
+                Flush.Text = pre.getFlush().ToString() + "%";
+                Straight.Text = pre.getStraight().ToString() + "%";
+                Trips.Text = pre.getTrips().ToString() + "%";
+                TwoPair.Text = pre.getTwoPair().ToString() + "%";
+                Pair.Text = pre.getPair().ToString() + "%";
 
                 //Output to status
                 txtStatus.Text += "\r\n\r\nYour hand: " + holecards[0].ToString();

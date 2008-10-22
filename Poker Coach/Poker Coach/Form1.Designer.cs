@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdHoleUpdate = new System.Windows.Forms.Button();
             this.cbbxCardSuit2 = new System.Windows.Forms.ComboBox();
@@ -44,34 +45,34 @@
             this.cbbxFlopCard1Suit = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmdTurnUpdate = new System.Windows.Forms.Button();
-            this.cbbxTurnCardValue = new System.Windows.Forms.ComboBox();
-            this.cbbxTurnCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cmdRiverUpdate = new System.Windows.Forms.Button();
             this.cbbxRiverCardValue = new System.Windows.Forms.ComboBox();
             this.cbbxRiverCardSuit = new System.Windows.Forms.ComboBox();
+            this.cbbxTurnCardValue = new System.Windows.Forms.ComboBox();
+            this.cbbxTurnCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.numPlayers = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.Pair = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TwoPair = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Trips = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Straight = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Flush = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.FullHouse = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Quads = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.StraightFlush = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Royal = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -86,20 +87,23 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox1.Controls.Add(this.cmdHoleUpdate);
             this.groupBox1.Controls.Add(this.cbbxCardSuit2);
             this.groupBox1.Controls.Add(this.cbbxCardValue2);
             this.groupBox1.Controls.Add(this.cbbxCardSuit1);
             this.groupBox1.Controls.Add(this.cbbxCardValue1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(206, 344);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 88);
+            this.groupBox1.Size = new System.Drawing.Size(288, 83);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Cards";
             // 
             // cmdHoleUpdate
             // 
+            this.cmdHoleUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cmdHoleUpdate.Location = new System.Drawing.Point(162, 24);
             this.cmdHoleUpdate.Name = "cmdHoleUpdate";
             this.cmdHoleUpdate.Size = new System.Drawing.Size(120, 55);
@@ -180,6 +184,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox2.Controls.Add(this.cmdFlopUpdate);
             this.groupBox2.Controls.Add(this.cbbxFlopCard3Suit);
             this.groupBox2.Controls.Add(this.cbbxFlopCard3Value);
@@ -187,7 +192,8 @@
             this.groupBox2.Controls.Add(this.cbbxFlopCard1Value);
             this.groupBox2.Controls.Add(this.cbbxFlopCard2Value);
             this.groupBox2.Controls.Add(this.cbbxFlopCard1Suit);
-            this.groupBox2.Location = new System.Drawing.Point(12, 106);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Location = new System.Drawing.Point(206, 433);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(328, 100);
             this.groupBox2.TabIndex = 1;
@@ -196,6 +202,7 @@
             // 
             // cmdFlopUpdate
             // 
+            this.cmdFlopUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cmdFlopUpdate.Location = new System.Drawing.Point(238, 31);
             this.cmdFlopUpdate.Name = "cmdFlopUpdate";
             this.cmdFlopUpdate.Size = new System.Drawing.Size(84, 48);
@@ -311,10 +318,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox3.Controls.Add(this.cmdTurnUpdate);
             this.groupBox3.Controls.Add(this.cbbxTurnCardValue);
             this.groupBox3.Controls.Add(this.cbbxTurnCardSuit);
-            this.groupBox3.Location = new System.Drawing.Point(346, 106);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox3.Location = new System.Drawing.Point(540, 433);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(175, 100);
             this.groupBox3.TabIndex = 2;
@@ -323,6 +332,7 @@
             // 
             // cmdTurnUpdate
             // 
+            this.cmdTurnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cmdTurnUpdate.Location = new System.Drawing.Point(83, 31);
             this.cmdTurnUpdate.Name = "cmdTurnUpdate";
             this.cmdTurnUpdate.Size = new System.Drawing.Size(84, 48);
@@ -331,47 +341,14 @@
             this.cmdTurnUpdate.UseVisualStyleBackColor = true;
             this.cmdTurnUpdate.Click += new System.EventHandler(this.cmdTurnUpdate_Click);
             // 
-            // cbbxTurnCardValue
-            // 
-            this.cbbxTurnCardValue.FormattingEnabled = true;
-            this.cbbxTurnCardValue.Items.AddRange(new object[] {
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "J",
-            "Q",
-            "K",
-            "A"});
-            this.cbbxTurnCardValue.Location = new System.Drawing.Point(6, 31);
-            this.cbbxTurnCardValue.Name = "cbbxTurnCardValue";
-            this.cbbxTurnCardValue.Size = new System.Drawing.Size(37, 21);
-            this.cbbxTurnCardValue.TabIndex = 10;
-            // 
-            // cbbxTurnCardSuit
-            // 
-            this.cbbxTurnCardSuit.FormattingEnabled = true;
-            this.cbbxTurnCardSuit.Items.AddRange(new object[] {
-            "Clubs",
-            "Diamonds",
-            "Hearts",
-            "Spades"});
-            this.cbbxTurnCardSuit.Location = new System.Drawing.Point(6, 58);
-            this.cbbxTurnCardSuit.Name = "cbbxTurnCardSuit";
-            this.cbbxTurnCardSuit.Size = new System.Drawing.Size(71, 21);
-            this.cbbxTurnCardSuit.TabIndex = 11;
-            // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox4.Controls.Add(this.cmdRiverUpdate);
             this.groupBox4.Controls.Add(this.cbbxRiverCardValue);
             this.groupBox4.Controls.Add(this.cbbxRiverCardSuit);
-            this.groupBox4.Location = new System.Drawing.Point(346, 212);
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox4.Location = new System.Drawing.Point(721, 433);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(178, 100);
             this.groupBox4.TabIndex = 3;
@@ -380,6 +357,7 @@
             // 
             // cmdRiverUpdate
             // 
+            this.cmdRiverUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cmdRiverUpdate.Location = new System.Drawing.Point(83, 31);
             this.cmdRiverUpdate.Name = "cmdRiverUpdate";
             this.cmdRiverUpdate.Size = new System.Drawing.Size(84, 48);
@@ -423,11 +401,48 @@
             this.cbbxRiverCardSuit.Size = new System.Drawing.Size(71, 21);
             this.cbbxRiverCardSuit.TabIndex = 7;
             // 
+            // cbbxTurnCardValue
+            // 
+            this.cbbxTurnCardValue.FormattingEnabled = true;
+            this.cbbxTurnCardValue.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "J",
+            "Q",
+            "K",
+            "A"});
+            this.cbbxTurnCardValue.Location = new System.Drawing.Point(6, 31);
+            this.cbbxTurnCardValue.Name = "cbbxTurnCardValue";
+            this.cbbxTurnCardValue.Size = new System.Drawing.Size(37, 21);
+            this.cbbxTurnCardValue.TabIndex = 10;
+            // 
+            // cbbxTurnCardSuit
+            // 
+            this.cbbxTurnCardSuit.FormattingEnabled = true;
+            this.cbbxTurnCardSuit.Items.AddRange(new object[] {
+            "Clubs",
+            "Diamonds",
+            "Hearts",
+            "Spades"});
+            this.cbbxTurnCardSuit.Location = new System.Drawing.Point(6, 58);
+            this.cbbxTurnCardSuit.Name = "cbbxTurnCardSuit";
+            this.cbbxTurnCardSuit.Size = new System.Drawing.Size(71, 21);
+            this.cbbxTurnCardSuit.TabIndex = 11;
+            // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox5.Controls.Add(this.numPlayers);
             this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Location = new System.Drawing.Point(306, 17);
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox5.Location = new System.Drawing.Point(12, 192);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(254, 83);
             this.groupBox5.TabIndex = 4;
@@ -462,24 +477,26 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox6.Controls.Add(this.label10);
-            this.groupBox6.Controls.Add(this.textBox9);
+            this.groupBox6.Controls.Add(this.Pair);
             this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Controls.Add(this.textBox5);
+            this.groupBox6.Controls.Add(this.TwoPair);
             this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.textBox6);
+            this.groupBox6.Controls.Add(this.Trips);
             this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.textBox7);
+            this.groupBox6.Controls.Add(this.Straight);
             this.groupBox6.Controls.Add(this.label9);
-            this.groupBox6.Controls.Add(this.textBox8);
+            this.groupBox6.Controls.Add(this.Flush);
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.FullHouse);
             this.groupBox6.Controls.Add(this.label4);
-            this.groupBox6.Controls.Add(this.textBox3);
+            this.groupBox6.Controls.Add(this.Quads);
             this.groupBox6.Controls.Add(this.label3);
-            this.groupBox6.Controls.Add(this.textBox2);
+            this.groupBox6.Controls.Add(this.StraightFlush);
             this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.Royal);
+            this.groupBox6.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox6.Location = new System.Drawing.Point(12, 281);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(188, 252);
@@ -496,13 +513,13 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "Pair";
             // 
-            // textBox9
+            // Pair
             // 
-            this.textBox9.Location = new System.Drawing.Point(92, 226);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(82, 20);
-            this.textBox9.TabIndex = 16;
+            this.Pair.Location = new System.Drawing.Point(92, 226);
+            this.Pair.Name = "Pair";
+            this.Pair.ReadOnly = true;
+            this.Pair.Size = new System.Drawing.Size(82, 20);
+            this.Pair.TabIndex = 16;
             // 
             // label6
             // 
@@ -513,13 +530,13 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Two Pair";
             // 
-            // textBox5
+            // TwoPair
             // 
-            this.textBox5.Location = new System.Drawing.Point(92, 200);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(82, 20);
-            this.textBox5.TabIndex = 14;
+            this.TwoPair.Location = new System.Drawing.Point(92, 200);
+            this.TwoPair.Name = "TwoPair";
+            this.TwoPair.ReadOnly = true;
+            this.TwoPair.Size = new System.Drawing.Size(82, 20);
+            this.TwoPair.TabIndex = 14;
             // 
             // label7
             // 
@@ -530,13 +547,13 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Three of a Kind";
             // 
-            // textBox6
+            // Trips
             // 
-            this.textBox6.Location = new System.Drawing.Point(92, 174);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(82, 20);
-            this.textBox6.TabIndex = 12;
+            this.Trips.Location = new System.Drawing.Point(92, 174);
+            this.Trips.Name = "Trips";
+            this.Trips.ReadOnly = true;
+            this.Trips.Size = new System.Drawing.Size(82, 20);
+            this.Trips.TabIndex = 12;
             // 
             // label8
             // 
@@ -547,13 +564,13 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Straight";
             // 
-            // textBox7
+            // Straight
             // 
-            this.textBox7.Location = new System.Drawing.Point(92, 148);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(82, 20);
-            this.textBox7.TabIndex = 10;
+            this.Straight.Location = new System.Drawing.Point(92, 148);
+            this.Straight.Name = "Straight";
+            this.Straight.ReadOnly = true;
+            this.Straight.Size = new System.Drawing.Size(82, 20);
+            this.Straight.TabIndex = 10;
             // 
             // label9
             // 
@@ -564,13 +581,13 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Flush";
             // 
-            // textBox8
+            // Flush
             // 
-            this.textBox8.Location = new System.Drawing.Point(92, 122);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(82, 20);
-            this.textBox8.TabIndex = 8;
+            this.Flush.Location = new System.Drawing.Point(92, 122);
+            this.Flush.Name = "Flush";
+            this.Flush.ReadOnly = true;
+            this.Flush.Size = new System.Drawing.Size(82, 20);
+            this.Flush.TabIndex = 8;
             // 
             // label5
             // 
@@ -581,13 +598,13 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Full House";
             // 
-            // textBox4
+            // FullHouse
             // 
-            this.textBox4.Location = new System.Drawing.Point(92, 97);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(82, 20);
-            this.textBox4.TabIndex = 6;
+            this.FullHouse.Location = new System.Drawing.Point(92, 97);
+            this.FullHouse.Name = "FullHouse";
+            this.FullHouse.ReadOnly = true;
+            this.FullHouse.Size = new System.Drawing.Size(82, 20);
+            this.FullHouse.TabIndex = 6;
             // 
             // label4
             // 
@@ -598,13 +615,13 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Four of a Kind";
             // 
-            // textBox3
+            // Quads
             // 
-            this.textBox3.Location = new System.Drawing.Point(92, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(82, 20);
-            this.textBox3.TabIndex = 4;
+            this.Quads.Location = new System.Drawing.Point(92, 71);
+            this.Quads.Name = "Quads";
+            this.Quads.ReadOnly = true;
+            this.Quads.Size = new System.Drawing.Size(82, 20);
+            this.Quads.TabIndex = 4;
             // 
             // label3
             // 
@@ -615,13 +632,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Straight Flush";
             // 
-            // textBox2
+            // StraightFlush
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(82, 20);
-            this.textBox2.TabIndex = 2;
+            this.StraightFlush.Location = new System.Drawing.Point(92, 45);
+            this.StraightFlush.Name = "StraightFlush";
+            this.StraightFlush.ReadOnly = true;
+            this.StraightFlush.Size = new System.Drawing.Size(82, 20);
+            this.StraightFlush.TabIndex = 2;
             // 
             // label2
             // 
@@ -632,30 +649,33 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Royal Flush";
             // 
-            // textBox1
+            // Royal
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 0;
+            this.Royal.Location = new System.Drawing.Point(92, 19);
+            this.Royal.Name = "Royal";
+            this.Royal.ReadOnly = true;
+            this.Royal.Size = new System.Drawing.Size(82, 20);
+            this.Royal.TabIndex = 0;
             // 
             // txtStatus
             // 
+            this.txtStatus.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtStatus.Location = new System.Drawing.Point(6, 15);
             this.txtStatus.Multiline = true;
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
             this.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtStatus.Size = new System.Drawing.Size(241, 483);
+            this.txtStatus.Size = new System.Drawing.Size(241, 64);
             this.txtStatus.TabIndex = 6;
             // 
             // groupBox7
             // 
+            this.groupBox7.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox7.Controls.Add(this.txtStatus);
-            this.groupBox7.Location = new System.Drawing.Point(566, 17);
+            this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox7.Location = new System.Drawing.Point(329, 12);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(254, 504);
+            this.groupBox7.Size = new System.Drawing.Size(254, 95);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Status";
@@ -664,11 +684,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(895, 533);
             this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -713,23 +735,23 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Royal;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox Pair;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TwoPair;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Trips;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox Straight;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Flush;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox FullHouse;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Quads;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox StraightFlush;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button cmdHoleUpdate;
