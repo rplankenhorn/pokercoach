@@ -120,14 +120,14 @@ namespace Poker_Coach
                 
                 //update preflop hand probabilites, these are hands you can make with the flop ONLY!!!
                 Royal.Text = pre.getRoyal().ToString() + "%";
-                StraightFlush.Text = pre.getStraightFlush().ToString() + "%";
+                StraightFlush.Text = " <= " + pre.getStraightFlush().ToString() + "%";
                 Quads.Text = pre.getQuads().ToString() + "%";
                 FullHouse.Text = pre.getFullHouse().ToString() + "%";
                 Flush.Text = pre.getFlush().ToString() + "%";
-                Straight.Text = pre.getStraight().ToString() + "%";
+                Straight.Text = " <= " + pre.getStraight().ToString() + "%";
                 Trips.Text = pre.getTrips().ToString() + "%";
                 TwoPair.Text = pre.getTwoPair().ToString() + "%";
-                Pair.Text = pre.getPair().ToString() + "%";
+                Pair.Text =  pre.getPair().ToString() + "%";
 
                 //Output to status
                 txtStatus.Text += "\r\n\r\nYour hand: " + holecards[0].ToString();
