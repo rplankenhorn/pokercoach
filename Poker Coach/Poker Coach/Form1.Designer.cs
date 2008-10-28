@@ -45,12 +45,12 @@
             this.cbbxFlopCard1Suit = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmdTurnUpdate = new System.Windows.Forms.Button();
+            this.cbbxTurnCardValue = new System.Windows.Forms.ComboBox();
+            this.cbbxTurnCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cmdRiverUpdate = new System.Windows.Forms.Button();
             this.cbbxRiverCardValue = new System.Windows.Forms.ComboBox();
             this.cbbxRiverCardSuit = new System.Windows.Forms.ComboBox();
-            this.cbbxTurnCardValue = new System.Windows.Forms.ComboBox();
-            this.cbbxTurnCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.numPlayers = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,6 +75,9 @@
             this.Royal = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.coachBox = new System.Windows.Forms.GroupBox();
+            this.txtCoach = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPlayers)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.coachBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -94,9 +99,9 @@
             this.groupBox1.Controls.Add(this.cbbxCardSuit1);
             this.groupBox1.Controls.Add(this.cbbxCardValue1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(206, 344);
+            this.groupBox1.Location = new System.Drawing.Point(206, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 83);
+            this.groupBox1.Size = new System.Drawing.Size(288, 89);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Cards";
@@ -341,6 +346,41 @@
             this.cmdTurnUpdate.UseVisualStyleBackColor = true;
             this.cmdTurnUpdate.Click += new System.EventHandler(this.cmdTurnUpdate_Click);
             // 
+            // cbbxTurnCardValue
+            // 
+            this.cbbxTurnCardValue.FormattingEnabled = true;
+            this.cbbxTurnCardValue.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "J",
+            "Q",
+            "K",
+            "A"});
+            this.cbbxTurnCardValue.Location = new System.Drawing.Point(6, 31);
+            this.cbbxTurnCardValue.Name = "cbbxTurnCardValue";
+            this.cbbxTurnCardValue.Size = new System.Drawing.Size(37, 21);
+            this.cbbxTurnCardValue.TabIndex = 10;
+            // 
+            // cbbxTurnCardSuit
+            // 
+            this.cbbxTurnCardSuit.FormattingEnabled = true;
+            this.cbbxTurnCardSuit.Items.AddRange(new object[] {
+            "Clubs",
+            "Diamonds",
+            "Hearts",
+            "Spades"});
+            this.cbbxTurnCardSuit.Location = new System.Drawing.Point(6, 58);
+            this.cbbxTurnCardSuit.Name = "cbbxTurnCardSuit";
+            this.cbbxTurnCardSuit.Size = new System.Drawing.Size(71, 21);
+            this.cbbxTurnCardSuit.TabIndex = 11;
+            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.DarkRed;
@@ -401,41 +441,6 @@
             this.cbbxRiverCardSuit.Size = new System.Drawing.Size(71, 21);
             this.cbbxRiverCardSuit.TabIndex = 7;
             // 
-            // cbbxTurnCardValue
-            // 
-            this.cbbxTurnCardValue.FormattingEnabled = true;
-            this.cbbxTurnCardValue.Items.AddRange(new object[] {
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "J",
-            "Q",
-            "K",
-            "A"});
-            this.cbbxTurnCardValue.Location = new System.Drawing.Point(6, 31);
-            this.cbbxTurnCardValue.Name = "cbbxTurnCardValue";
-            this.cbbxTurnCardValue.Size = new System.Drawing.Size(37, 21);
-            this.cbbxTurnCardValue.TabIndex = 10;
-            // 
-            // cbbxTurnCardSuit
-            // 
-            this.cbbxTurnCardSuit.FormattingEnabled = true;
-            this.cbbxTurnCardSuit.Items.AddRange(new object[] {
-            "Clubs",
-            "Diamonds",
-            "Hearts",
-            "Spades"});
-            this.cbbxTurnCardSuit.Location = new System.Drawing.Point(6, 58);
-            this.cbbxTurnCardSuit.Name = "cbbxTurnCardSuit";
-            this.cbbxTurnCardSuit.Size = new System.Drawing.Size(71, 21);
-            this.cbbxTurnCardSuit.TabIndex = 11;
-            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.DarkRed;
@@ -444,7 +449,7 @@
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox5.Location = new System.Drawing.Point(12, 192);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(254, 83);
+            this.groupBox5.Size = new System.Drawing.Size(188, 83);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Game Info";
@@ -673,12 +678,42 @@
             this.groupBox7.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox7.Controls.Add(this.txtStatus);
             this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox7.Location = new System.Drawing.Point(329, 12);
+            this.groupBox7.Location = new System.Drawing.Point(494, 121);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(254, 95);
+            this.groupBox7.Size = new System.Drawing.Size(254, 89);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Status";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 165);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // coachBox
+            // 
+            this.coachBox.BackColor = System.Drawing.Color.DarkRed;
+            this.coachBox.Controls.Add(this.txtCoach);
+            this.coachBox.Controls.Add(this.pictureBox1);
+            this.coachBox.ForeColor = System.Drawing.Color.White;
+            this.coachBox.Location = new System.Drawing.Point(206, 210);
+            this.coachBox.Name = "coachBox";
+            this.coachBox.Size = new System.Drawing.Size(542, 213);
+            this.coachBox.TabIndex = 9;
+            this.coachBox.TabStop = false;
+            this.coachBox.Text = "The Coach Says:";
+            // 
+            // txtCoach
+            // 
+            this.txtCoach.Location = new System.Drawing.Point(155, 19);
+            this.txtCoach.Name = "txtCoach";
+            this.txtCoach.Size = new System.Drawing.Size(292, 188);
+            this.txtCoach.TabIndex = 9;
+            this.txtCoach.Text = "";
             // 
             // Form1
             // 
@@ -687,6 +722,7 @@
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(895, 533);
+            this.Controls.Add(this.coachBox);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
@@ -707,6 +743,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.coachBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -759,6 +797,9 @@
         private System.Windows.Forms.Button cmdTurnUpdate;
         private System.Windows.Forms.Button cmdRiverUpdate;
         private System.Windows.Forms.NumericUpDown numPlayers;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox coachBox;
+        private System.Windows.Forms.RichTextBox txtCoach;
     }
 }
 
