@@ -27,6 +27,7 @@ namespace Poker_Coach
         public Form1()
         {
             InitializeComponent();
+            txtCoach.Text += "Welcome, let's win kid...\r\n\rInput your two cards\r\n\r";
         }
 
         private void populateCardsLeft()
@@ -83,6 +84,7 @@ namespace Poker_Coach
 
         private void cmdHoleUpdate_Click(object sender, EventArgs e)
         {
+
             //Makes sure something is selected before updating.
             if (cbbxCardSuit1.SelectedIndex > -1 && cbbxCardSuit2.SelectedIndex > -1 &&
                 cbbxCardValue1.SelectedIndex > -1 && cbbxCardValue2.SelectedIndex > -1)
@@ -135,6 +137,7 @@ namespace Poker_Coach
                 txtStatus.Text += "\r\n\r\nCurrent pre-flop odds to win: " + odds.ToString() + "%";
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
+
             }
         }
 
