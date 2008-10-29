@@ -138,6 +138,13 @@ namespace Poker_Coach
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
 
+                Coach ourCoach = new Coach(1);
+
+                double temp = ourCoach.preFlopCalc(odds, 100, 50, (int)numPosition.Value, 0, (int)numPlayers.Value);
+
+                txtCoach.Text +=  ourCoach.preFlopDecision(temp,0);
+                txtCoach.Text += temp + "\r\n";
+
             }
         }
 
@@ -173,6 +180,11 @@ namespace Poker_Coach
 
                 txtStatus.Text += "\r\n\r\nRiver Updated: " + river.ToString();
             }
+        }
+
+        private void numPlayers_ValueChanged(object sender, EventArgs e)
+        {
+            numPosition.Maximum = numPlayers.Value;
         }
     }
 }

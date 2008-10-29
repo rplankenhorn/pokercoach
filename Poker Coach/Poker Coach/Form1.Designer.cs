@@ -78,6 +78,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.coachBox = new System.Windows.Forms.GroupBox();
             this.txtCoach = new System.Windows.Forms.RichTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numPosition = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -88,12 +94,14 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coachBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPosition)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox1.Controls.Add(this.cmdHoleUpdate);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cbbxCardSuit2);
             this.groupBox1.Controls.Add(this.cbbxCardValue2);
             this.groupBox1.Controls.Add(this.cbbxCardSuit1);
@@ -444,12 +452,17 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.DarkRed;
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.numPosition);
+            this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.numPlayers);
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox5.Location = new System.Drawing.Point(12, 192);
+            this.groupBox5.Location = new System.Drawing.Point(12, 99);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(188, 83);
+            this.groupBox5.Size = new System.Drawing.Size(188, 176);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Game Info";
@@ -470,6 +483,7 @@
             0,
             0,
             0});
+            this.numPlayers.ValueChanged += new System.EventHandler(this.numPlayers_ValueChanged);
             // 
             // label1
             // 
@@ -715,6 +729,73 @@
             this.txtCoach.TabIndex = 9;
             this.txtCoach.Text = "";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(-188, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Position";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 67);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Position";
+            // 
+            // numPosition
+            // 
+            this.numPosition.Location = new System.Drawing.Point(6, 145);
+            this.numPosition.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numPosition.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPosition.Name = "numPosition";
+            this.numPosition.Size = new System.Drawing.Size(120, 20);
+            this.numPosition.TabIndex = 8;
+            this.numPosition.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 85);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "1 = Small Blind";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(13, 103);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "2 = Big Blind";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Max = Dealer";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,6 +814,7 @@
             this.Name = "Form1";
             this.Text = "Poker Coach";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -745,6 +827,7 @@
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.coachBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numPosition)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -800,6 +883,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox coachBox;
         private System.Windows.Forms.RichTextBox txtCoach;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown numPosition;
     }
 }
 
