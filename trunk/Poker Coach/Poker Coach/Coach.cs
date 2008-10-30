@@ -19,7 +19,7 @@ namespace Poker_Coach
         {
             double value;
 
-            value = (((percentWin - 7.28) / (39.05 - 7.28)) * 30 * risk) + ((potSize / (/*potSize +*/costToPlay + 1)) * risk * 2) + (((double)ourPosition / (double)totalPlayers) * 4);
+            value = (((percentWin - 7.28) / (39.05 - 7.28)) * 30 * risk) + ((potSize / (/*potSize +*/costToPlay + 1)) * risk * 2) + (((double)ourPosition / (double)totalPlayers) * 10);
 
             return value;
 
@@ -36,7 +36,7 @@ namespace Poker_Coach
                 }
                 else
                 {
-                    return "Fold that garbage\r\n";
+                    return "Fold\r\n";
                 }
             }
             else if (value >= 24)

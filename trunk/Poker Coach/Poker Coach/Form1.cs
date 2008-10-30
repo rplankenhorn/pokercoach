@@ -82,7 +82,9 @@ namespace Poker_Coach
 
                 FlopOdds flpodds = new FlopOdds();
 
-                txtStatus.Text += flpodds.determinePair(holecards, community);
+                txtStatus.Text += "\r\nYou have: " + flpodds.determinePair(holecards, community) + " post flop\r\n";
+                txtStatus.SelectionStart = txtStatus.Text.Length;
+                txtStatus.ScrollToCaret();
             }
         }
 
@@ -147,6 +149,8 @@ namespace Poker_Coach
                 double temp = ourCoach.preFlopCalc(odds, (double)numChipCount.Value, (double)numPotSize.Value, (int)numPosition.Value, (double)numCostToPlay.Value, (int)numPlayers.Value);
 
                 txtCoach.Text += ourCoach.preFlopDecision(temp, (double)numCostToPlay.Value);
+                txtCoach.SelectionStart = txtStatus.Text.Length;
+                txtCoach.ScrollToCaret();
 
             }
         }
