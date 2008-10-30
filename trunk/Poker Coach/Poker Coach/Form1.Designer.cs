@@ -128,7 +128,7 @@
             // 
             // cmdHoleUpdate
             // 
-            this.cmdHoleUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cmdHoleUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmdHoleUpdate.Location = new System.Drawing.Point(162, 24);
             this.cmdHoleUpdate.Name = "cmdHoleUpdate";
             this.cmdHoleUpdate.Size = new System.Drawing.Size(120, 55);
@@ -236,7 +236,7 @@
             // 
             // cmdFlopUpdate
             // 
-            this.cmdFlopUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cmdFlopUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmdFlopUpdate.Location = new System.Drawing.Point(238, 31);
             this.cmdFlopUpdate.Name = "cmdFlopUpdate";
             this.cmdFlopUpdate.Size = new System.Drawing.Size(84, 48);
@@ -366,7 +366,7 @@
             // 
             // cmdTurnUpdate
             // 
-            this.cmdTurnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cmdTurnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmdTurnUpdate.Location = new System.Drawing.Point(83, 31);
             this.cmdTurnUpdate.Name = "cmdTurnUpdate";
             this.cmdTurnUpdate.Size = new System.Drawing.Size(84, 48);
@@ -426,7 +426,7 @@
             // 
             // cmdRiverUpdate
             // 
-            this.cmdRiverUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cmdRiverUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmdRiverUpdate.Location = new System.Drawing.Point(83, 31);
             this.cmdRiverUpdate.Name = "cmdRiverUpdate";
             this.cmdRiverUpdate.Size = new System.Drawing.Size(84, 48);

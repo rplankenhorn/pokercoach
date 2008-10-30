@@ -79,6 +79,10 @@ namespace Poker_Coach
 
                 txtStatus.Text += "\r\n\r\nFlop is: " + community[0].ToString() + ", " + community[1].ToString() +
                     ", and " + community[2].ToString();
+
+                FlopOdds flpodds = new FlopOdds();
+
+                txtStatus.Text += flpodds.determinePair(holecards, community);
             }
         }
 
