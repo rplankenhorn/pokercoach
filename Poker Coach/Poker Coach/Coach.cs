@@ -19,7 +19,7 @@ namespace Poker_Coach
         {
             double value;
 
-            value = (((percentWin - 7.28) / (39.05 - 7.28)) * 16 * risk) + ((potSize / (potSize + costToPlay)) * risk * 8) + (((double)ourPosition / (double)totalPlayers) * 12);
+            value = (((percentWin - 7.28) / (39.05 - 7.28)) * 30 * risk) + ((potSize / (/*potSize +*/costToPlay + 1)) * risk * 2) + (((double)ourPosition / (double)totalPlayers) * 4);
 
             return value;
 
