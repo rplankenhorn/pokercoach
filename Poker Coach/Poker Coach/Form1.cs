@@ -140,10 +140,9 @@ namespace Poker_Coach
 
                 Coach ourCoach = new Coach(1);
 
-                double temp = ourCoach.preFlopCalc(odds, 100, 50, (int)numPosition.Value, 0, (int)numPlayers.Value);
+                double temp = ourCoach.preFlopCalc(odds, (double)numChipCount.Value, (double)numPotSize.Value, (int)numPosition.Value, (double)numCostToPlay.Value, (int)numPlayers.Value);
 
-                txtCoach.Text +=  ourCoach.preFlopDecision(temp,0);
-                txtCoach.Text += temp + "\r\n";
+                txtCoach.Text += ourCoach.preFlopDecision(temp, (double)numCostToPlay.Value);
 
             }
         }
@@ -185,6 +184,17 @@ namespace Poker_Coach
         private void numPlayers_ValueChanged(object sender, EventArgs e)
         {
             numPosition.Maximum = numPlayers.Value;
+        }
+
+        private void numChipCount_ValueChanged(object sender, EventArgs e)
+        {
+            numCostToPlay.Maximum = numChipCount.Value;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            numPosition.Maximum = numPlayers.Value;
+            numCostToPlay.Maximum = numChipCount.Value;
         }
     }
 }
