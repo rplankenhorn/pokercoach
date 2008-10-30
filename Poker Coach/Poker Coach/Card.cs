@@ -77,6 +77,34 @@ namespace Poker_Coach
         {
             return value + " of " + suit;
         }
+
+        public int compareValue(Card temp)
+        {
+            if (this.getValue() > temp.getValue())
+            {
+                return 1;
+            }
+            else if (this.getValue() < temp.getValue())
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public Boolean compareSuit(Card temp)
+        {
+            if(this.getSuit().Equals(temp.getSuit()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
 
