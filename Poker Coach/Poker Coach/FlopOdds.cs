@@ -39,14 +39,15 @@ namespace Poker_Coach
                 switch(pairIndexStore[k])
                 {
                     case 1:
-                        r += "Pair of " + sorted[k].getValue().ToString();
+                        r += " a Pair of " + sorted[k].getValue().ToString();
                         break;
                     case 2:
-                        r += "Trip " + sorted[k].getValue().ToString();
+                        r += " Trip " + sorted[k].getValue().ToString();
                         break;
                     case 3:
-                        r += "Quad " + sorted[k].getValue().ToString();
+                        r += " Quad " + sorted[k].getValue().ToString();
                         break;
+                  
                 }
             }
 
