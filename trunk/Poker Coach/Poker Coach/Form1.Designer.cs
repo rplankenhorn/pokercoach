@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdHoleUpdate = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.cbbxCardSuit2 = new System.Windows.Forms.ComboBox();
             this.cbbxCardValue2 = new System.Windows.Forms.ComboBox();
             this.cbbxCardSuit1 = new System.Windows.Forms.ComboBox();
@@ -52,6 +53,11 @@
             this.cbbxRiverCardValue = new System.Windows.Forms.ComboBox();
             this.cbbxRiverCardSuit = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.numPosition = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.numPlayers = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -78,23 +84,29 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.coachBox = new System.Windows.Forms.GroupBox();
             this.txtCoach = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.numPosition = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numChipCount = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.numPotSize = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
+            this.numCostToPlay = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPlayers)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coachBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numPosition)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numChipCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPotSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCostToPlay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -124,6 +136,15 @@
             this.cmdHoleUpdate.Text = "Update";
             this.cmdHoleUpdate.UseVisualStyleBackColor = true;
             this.cmdHoleUpdate.Click += new System.EventHandler(this.cmdHoleUpdate_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(-188, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Position";
             // 
             // cbbxCardSuit2
             // 
@@ -467,6 +488,64 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Game Info";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Max = Dealer";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(13, 103);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "2 = Big Blind";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 85);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "1 = Small Blind";
+            // 
+            // numPosition
+            // 
+            this.numPosition.Location = new System.Drawing.Point(6, 145);
+            this.numPosition.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numPosition.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPosition.Name = "numPosition";
+            this.numPosition.Size = new System.Drawing.Size(120, 20);
+            this.numPosition.TabIndex = 8;
+            this.numPosition.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 67);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Position";
+            // 
             // numPlayers
             // 
             this.numPlayers.Location = new System.Drawing.Point(6, 35);
@@ -729,72 +808,126 @@
             this.txtCoach.TabIndex = 9;
             this.txtCoach.Text = "";
             // 
-            // label11
+            // groupBox8
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(-188, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Position";
+            this.groupBox8.BackColor = System.Drawing.Color.DarkRed;
+            this.groupBox8.Controls.Add(this.label19);
+            this.groupBox8.Controls.Add(this.numCostToPlay);
+            this.groupBox8.Controls.Add(this.label18);
+            this.groupBox8.Controls.Add(this.numPotSize);
+            this.groupBox8.Controls.Add(this.label17);
+            this.groupBox8.Controls.Add(this.numChipCount);
+            this.groupBox8.Controls.Add(this.label16);
+            this.groupBox8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox8.Location = new System.Drawing.Point(206, 26);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(447, 89);
+            this.groupBox8.TabIndex = 6;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Chip Amounts";
             // 
-            // label12
+            // label16
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 67);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Position";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(-188, 66);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Position";
             // 
-            // numPosition
+            // numChipCount
             // 
-            this.numPosition.Location = new System.Drawing.Point(6, 145);
-            this.numPosition.Maximum = new decimal(new int[] {
-            8,
+            this.numChipCount.Location = new System.Drawing.Point(6, 37);
+            this.numChipCount.Maximum = new decimal(new int[] {
+            1000000,
             0,
             0,
             0});
-            this.numPosition.Minimum = new decimal(new int[] {
+            this.numChipCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numPosition.Name = "numPosition";
-            this.numPosition.Size = new System.Drawing.Size(120, 20);
-            this.numPosition.TabIndex = 8;
-            this.numPosition.Value = new decimal(new int[] {
+            this.numChipCount.Name = "numChipCount";
+            this.numChipCount.Size = new System.Drawing.Size(120, 20);
+            this.numChipCount.TabIndex = 6;
+            this.numChipCount.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numChipCount.ValueChanged += new System.EventHandler(this.numChipCount_ValueChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(84, 13);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Your Chip Count";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(156, 18);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(46, 13);
+            this.label18.TabIndex = 9;
+            this.label18.Text = "Pot Size";
+            // 
+            // numPotSize
+            // 
+            this.numPotSize.Location = new System.Drawing.Point(159, 37);
+            this.numPotSize.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numPotSize.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numPotSize.Name = "numPotSize";
+            this.numPotSize.Size = new System.Drawing.Size(120, 20);
+            this.numPotSize.TabIndex = 8;
+            this.numPotSize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
-            // label13
+            // label19
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 85);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "1 = Small Blind";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(306, 18);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 13);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "Cost To Play";
             // 
-            // label14
+            // numCostToPlay
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(13, 103);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 13);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "2 = Big Blind";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 122);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 13);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "Max = Dealer";
+            this.numCostToPlay.Location = new System.Drawing.Point(309, 37);
+            this.numCostToPlay.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numCostToPlay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCostToPlay.Name = "numCostToPlay";
+            this.numCostToPlay.Size = new System.Drawing.Size(120, 20);
+            this.numCostToPlay.TabIndex = 10;
+            this.numCostToPlay.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
@@ -803,6 +936,7 @@
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(895, 533);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.coachBox);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
@@ -813,6 +947,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Poker Coach";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -820,6 +955,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPlayers)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -827,7 +963,11 @@
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.coachBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numPosition)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numChipCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPotSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCostToPlay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -889,6 +1029,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown numPosition;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.NumericUpDown numPotSize;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown numChipCount;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown numCostToPlay;
     }
 }
 
