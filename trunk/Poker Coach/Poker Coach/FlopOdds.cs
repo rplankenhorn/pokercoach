@@ -12,31 +12,10 @@ namespace Poker_Coach
          * made not including the holecards.
          * 
          */
-        public String determinePair(List<Card> holecards, List<Card> community)
+        public Hand determinePair(List<Card> holecards, List<Card> community)
         {
             List<Card> sorted = sortHoleAndCommunity(holecards, community);
-            String r = "";
-            Boolean fullhouse = false;
-            Boolean pair = false;
-            Boolean trips = false;
-            Boolean quads = false;
-
-            int[] pairIndexStore = new int[5];
-
-            for (int j = 0; j < sorted.Count; j++)
-            {
-                for (int i = j+1; i < sorted.Count; i++)
-                {
-                    if (sorted[j].getValue().Equals(sorted[i].getValue()))
-                    {
-                        pairIndexStore[j]++;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
+            Hand r = new Hand(sorted);
 
             /**
              * Since the list is sorted, there are only two possible full house configurations.
@@ -45,13 +24,15 @@ namespace Poker_Coach
             if (sorted[0].getValueInt() == sorted[1].getValueInt() && sorted[1].getValueInt() == sorted[2].getValueInt()
                 && sorted[2].getValueInt() == sorted[3].getValueInt())
             {
-                return "Quad " + sorted[0].formatCardValuePlural();
+                r.setQuads(true);
+                return r;
             }
 
             if (sorted[1].getValueInt() == sorted[2].getValueInt() && sorted[2].getValueInt() == sorted[3].getValueInt()
                 && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
-                return "Quad " + sorted[1].formatCardValuePlural();
+                r.setQuads(true);
+                return r;
             }
 
             /**
@@ -64,7 +45,8 @@ namespace Poker_Coach
             if (sorted[0].getValueInt() == sorted[1].getValueInt() && sorted[0].getValueInt() == sorted[2].getValueInt()
                 && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
-                return sorted[0].formatCardValuePlural() + " full of " + sorted[3].formatCardValuePlural();
+                r.setFullHouse(true);
+                return r;
             }
 
             /**
@@ -73,7 +55,8 @@ namespace Poker_Coach
             if (sorted[0].getValueInt() == sorted[1].getValueInt() && sorted[2].getValueInt() == sorted[3].getValueInt()
                 && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
-                return sorted[3].formatCardValuePlural() + " full of " + sorted[0].formatCardValuePlural();
+                r.setFullHouse(true);
+                return r;
             }
 
             /**
@@ -84,51 +67,87 @@ namespace Poker_Coach
             if (sorted[0].getValueInt() == sorted[1].getValueInt() && sorted[0].getValueInt() == sorted[2].getValueInt()
                 && sorted[3].getValueInt() != sorted[4].getValueInt())
             {
-                if (sorted[3].getValueInt() == 1 || sorted[4].getValueInt() == 1)
+                if (sorted[3].getValueInt() == 1)
                 {
-                    return "Trip " + sorted[0].formatCardValuePlural() + " with an Ace Kicker";
+                    r.setTrips(true);
+                    r.setKicker(3);
+                    return r;
+                }
+                else if (sorted[4].getValueInt() == 1)
+                {
+                    r.setTrips(true);
+                    r.setKicker(4);
+                    return r;
                 }
                 else if (sorted[3].getValueInt() > sorted[4].getValueInt())
                 {
-                    return "Trip " + sorted[0].formatCardValuePlural() + " with " + sorted[3].formatCardValue() + " Kicker";
+                    r.setTrips(true);
+                    r.setKicker(3);
+                    return r;
                 }
                 else
                 {
-                    return "Trip " + sorted[0].formatCardValuePlural() + " with " + sorted[4].formatCardValue() + " Kicker";
+                    r.setTrips(true);
+                    r.setKicker(4);
+                    return r;
                 }
             }
 
             if (sorted[1].getValueInt() == sorted[2].getValueInt() && sorted[1].getValueInt() == sorted[3].getValueInt()
                 && sorted[0].getValueInt() != sorted[4].getValueInt())
             {
-                if (sorted[0].getValueInt() == 1 || sorted[4].getValueInt() == 1)
+                if (sorted[0].getValueInt() == 1)
                 {
-                    return "Trip " + sorted[1].formatCardValuePlural() + " with an Ace Kicker";
+                    r.setTrips(true);
+                    r.setKicker(3);
+                    return r;
+                }
+                else if (sorted[4].getValueInt() == 1)
+                {
+                    r.setTrips(true);
+                    r.setKicker(4);
+                    return r;
                 }
                 else if (sorted[0].getValueInt() > sorted[4].getValueInt())
                 {
-                    return "Trip " + sorted[1].formatCardValuePlural() + " with " + sorted[0].formatCardValue() + " Kicker";
+                    r.setTrips(true);
+                    r.setKicker(0);
+                    return r;
                 }
                 else
                 {
-                    return "Trip " + sorted[1].formatCardValuePlural() + " with " + sorted[4].formatCardValue() + " Kicker";
+                    r.setTrips(true);
+                    r.setKicker(4);
+                    return r;
                 }
             }
 
             if (sorted[2].getValueInt() == sorted[3].getValueInt() && sorted[2].getValueInt() == sorted[4].getValueInt()
                 && sorted[0].getValueInt() != sorted[1].getValueInt())
             {
-                if (sorted[0].getValueInt() == 1 || sorted[1].getValueInt() == 1)
+                if (sorted[0].getValueInt() == 1)
                 {
-                    return "Trip " + sorted[2].formatCardValuePlural() + " with an Ace Kicker";
+                    r.setTrips(true);
+                    r.setKicker(0);
+                    return r;
+                }
+                else if (sorted[1].getValueInt() == 1)
+                {
+                    r.setTrips(true);
+                    r.setKicker(1);
+                    return r;
                 }
                 else if (sorted[0].getValueInt() > sorted[1].getValueInt())
                 {
-                    return "Trip " + sorted[2].formatCardValuePlural() + " with " + sorted[0].formatCardValue() + " Kicker";
+                    r.setTrips(true);
+                    r.setKicker(0);
+                    return r;
                 }
                 else
                 {
-                    return "Trip " + sorted[2].formatCardValuePlural() + " with " + sorted[1].formatCardValue() + " Kicker";
+                    r.setTrips(true);
+                    r.setKicker(1);
+                    return r;
                 }
             }
 
@@ -139,44 +158,23 @@ namespace Poker_Coach
 
             if (sorted[0].getValueInt() == sorted[1].getValueInt() && sorted[2].getValueInt() == sorted[3].getValueInt())
             {
-                if (sorted[0].getValueInt() > sorted[2].getValueInt())
-                {
-                    return "Two pair of " + sorted[0].formatCardValuePlural() + " and " + sorted[2].formatCardValuePlural()
-                        + " with " + sorted[4].formatCardValue() + " Kicker";
-                }
-                else
-                {
-                    return "Two pair of " + sorted[2].formatCardValuePlural() + " and " + sorted[0].formatCardValuePlural()
-                        + " with " + sorted[4].formatCardValue() + " Kicker";
-                }
+                r.setTwoPair(true);
+                r.setKicker(4);
+                return r;
             }
 
             if (sorted[1].getValueInt() == sorted[2].getValueInt() && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
-                if (sorted[1].getValueInt() > sorted[3].getValueInt())
-                {
-                    return "Two pair of " + sorted[1].formatCardValuePlural() + " and " + sorted[3].formatCardValuePlural()
-                        + " with " + sorted[0].formatCardValue() + " Kicker";
-                }
-                else
-                {
-                    return "Two pair of " + sorted[3].formatCardValuePlural() + " and " + sorted[1].formatCardValuePlural()
-                        + " with " + sorted[0].formatCardValue() + " Kicker";
-                }
+                r.setTwoPair(true);
+                r.setKicker(0);
+                return r;
             }
 
             if (sorted[0].getValueInt() == sorted[1].getValueInt() && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
-                if (sorted[1].getValueInt() > sorted[3].getValueInt())
-                {
-                    return "Two pair of " + sorted[1].formatCardValuePlural() + " and " + sorted[3].formatCardValuePlural()
-                        + " with " + sorted[2].formatCardValue() + " Kicker";
-                }
-                else
-                {
-                    return "Two pair of " + sorted[3].formatCardValuePlural() + " and " + sorted[1].formatCardValuePlural()
-                        + " with " + sorted[2].formatCardValue() + " Kicker";
-                }
+                r.setTwoPair(true);
+                r.setKicker(2);
+                return r;
             }
 
             /*
@@ -185,29 +183,140 @@ namespace Poker_Coach
              */
             if (sorted[0].getValueInt() == sorted[1].getValueInt())
             {
-                return "A pair of " + sorted[0].formatCardValuePlural() + " with a " + (sorted[2].maxOfThree(sorted[3], 
-                    sorted[4])).formatCardValue() + " kicker";
+                List<Card> temp = new List<Card>(3);
+                temp.Add(sorted[2]);
+                temp.Add(sorted[3]);
+                temp.Add(sorted[4]);
+
+                r.setPair(true);
+                r.setKicker(Card.maxIndex(temp)+2);
+                return r;
             }
 
             if (sorted[1].getValueInt() == sorted[2].getValueInt())
             {
-                return "A pair of " + sorted[1].formatCardValuePlural() + " with a " + (sorted[0].maxOfThree(sorted[3],
-                    sorted[4])).formatCardValue() + " kicker";
+                List<Card> temp = new List<Card>(3);
+                temp.Add(sorted[0]);
+                temp.Add(sorted[3]);
+                temp.Add(sorted[4]);
+
+                r.setPair(true);
+                r.setKicker(Card.maxIndex(temp)+2);
+                return r;
             }
 
             if (sorted[2].getValueInt() == sorted[3].getValueInt())
             {
-                return "A pair of " + sorted[2].formatCardValuePlural() + " with a " + (sorted[0].maxOfThree(sorted[1],
-                    sorted[4])).formatCardValue() + " kicker";
+                List<Card> temp = new List<Card>(3);
+                temp.Add(sorted[0]);
+                temp.Add(sorted[1]);
+                temp.Add(sorted[4]);
+
+                r.setPair(true);
+                r.setKicker(Card.maxIndex(temp)+2);
+                return r;
             }
 
             if (sorted[3].getValueInt() == sorted[4].getValueInt())
             {
-                return "A pair of " + sorted[3].formatCardValuePlural() + " with a " + (sorted[0].maxOfThree(sorted[1],
-                    sorted[2])).formatCardValue() + " kicker";
+                List<Card> temp = new List<Card>(3);
+                temp.Add(sorted[0]);
+                temp.Add(sorted[1]);
+                temp.Add(sorted[2]);
+
+                r.setPair(true);
+                r.setKicker(Card.maxIndex(temp) + 2);
+                return r;
             }
 
-            return null;
+            r.setHighCard(true);
+
+            if (sorted[4].getValueInt() == 1)
+            {
+                r.setKicker(4);
+            }
+            else
+            {
+                r.setKicker(0);
+            }
+
+            return r;
+        }
+
+        public Hand determineStraight(List<Card> holecards, List<Card> community)
+        {
+            List<Card> sorted = sortHoleAndCommunity(holecards, community);
+            Hand r = new Hand(sorted);
+
+            if (sorted[0].getValueInt() == 13 && sorted[1].getValueInt() == 12 && sorted[2].getValueInt() == 11
+                && sorted[3].getValueInt() == 10 && sorted[4].getValueInt() == 1)
+            {
+                r.setStraight(true);
+                return r;
+            }
+
+            if (sorted[0].getValueInt() == sorted[1].getValueInt() + 1 && sorted[1].getValueInt() == sorted[2].getValueInt() + 1
+                && sorted[2].getValueInt() == sorted[3].getValueInt() + 1 && sorted[3].getValueInt() == sorted[4].getValueInt() + 1)
+            {
+                r.setStraight(true);
+                return r;
+            }
+
+            r.setStraight(false);
+            return r;
+        }
+
+        public Hand determineFlush(List<Card> holecards, List<Card> community)
+        {
+            List<Card> sorted = sortHoleAndCommunity(holecards, community);
+            int temp = sorted[0].getSuitInt();
+            Hand r = new Hand(sorted);
+
+            for (int i = 1; i < sorted.Count; i++)
+            {
+                if (sorted[i].getSuitInt() != temp)
+                {
+                    r.setFlush(false);
+                    return r;
+                }
+            }
+
+            r.setFlush(true);
+            return r;
+        }
+
+        public Hand determineStraightFlush(List<Card> holecards, List<Card> community)
+        {
+            Hand isflush = determineFlush(holecards, community);
+            Hand isstraight = determineStraight(holecards, community);
+
+            if (isflush.getFlush() && isstraight.getStraight())
+            {
+                List<Card> sorted = isflush.getBestHand();
+
+                if (sorted[0].getValueInt() == 13 && sorted[1].getValueInt() == 12 && sorted[2].getValueInt() == 11
+                    && sorted[3].getValueInt() == 10 && sorted[4].getValueInt() == 1)
+                {
+                    isflush.setStraight(true);
+                    isflush.setRoyalFlush(true);
+                    return isflush;
+                }
+
+                isflush.setStraight(true);
+                return isflush;
+            }
+            else if (isflush.getFlush())
+            {
+                return isflush;
+            }
+            else if (isstraight.getStraight())
+            {
+                return isstraight;
+            }
+            else
+            {
+                return isflush;
+            }
         }
 
         public List<Card> sortHoleAndCommunity(List<Card> holecards, List<Card> community)
