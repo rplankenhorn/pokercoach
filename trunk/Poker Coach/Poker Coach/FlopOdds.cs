@@ -3,6 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+/**
+ * For Hand Value attribute:
+ * High Card = 0;
+ * Pair = 1;
+ * Twopair = 2;
+ * Trips = 3;
+ * Straight = 4;
+ * Flush = 5;
+ * Fullhouse = 6;
+ * Quads = 7;
+ * Straight Flush = 8;
+ * Royal Flush = 9;
+ */ 
+
 namespace Poker_Coach
 {
     class FlopOdds
@@ -25,6 +39,8 @@ namespace Poker_Coach
                 && sorted[2].getValueInt() == sorted[3].getValueInt())
             {
                 r.setQuads(true);
+                r.setHighestCardIndex(0);
+                r.setHandValue(7);
                 return r;
             }
 
@@ -32,6 +48,8 @@ namespace Poker_Coach
                 && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
                 r.setQuads(true);
+                r.setHighestCardIndex(1);
+                r.setHandValue(7);
                 return r;
             }
 
@@ -46,6 +64,8 @@ namespace Poker_Coach
                 && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
                 r.setFullHouse(true);
+                r.setHighestCardIndex(0);
+                r.setHandValue(6);
                 return r;
             }
 
@@ -56,6 +76,8 @@ namespace Poker_Coach
                 && sorted[3].getValueInt() == sorted[4].getValueInt())
             {
                 r.setFullHouse(true);
+                r.setHighestCardIndex(2);
+                r.setHandValue(6);
                 return r;
             }
 
@@ -71,24 +93,32 @@ namespace Poker_Coach
                 {
                     r.setTrips(true);
                     r.setKicker(3);
+                    r.setHighestCardIndex(0);
+                    r.setHandValue(3);
                     return r;
                 }
                 else if (sorted[4].getValueInt() == 1)
                 {
                     r.setTrips(true);
                     r.setKicker(4);
+                    r.setHighestCardIndex(0);
+                    r.setHandValue(3);
                     return r;
                 }
                 else if (sorted[3].getValueInt() > sorted[4].getValueInt())
                 {
                     r.setTrips(true);
                     r.setKicker(3);
+                    r.setHighestCardIndex(0);
+                    r.setHandValue(3);
                     return r;
                 }
                 else
                 {
                     r.setTrips(true);
                     r.setKicker(4);
+                    r.setHighestCardIndex(0);
+                    r.setHandValue(3);
                     return r;
                 }
             }
@@ -100,24 +130,32 @@ namespace Poker_Coach
                 {
                     r.setTrips(true);
                     r.setKicker(3);
+                    r.setHighestCardIndex(1);
+                    r.setHandValue(3);
                     return r;
                 }
                 else if (sorted[4].getValueInt() == 1)
                 {
                     r.setTrips(true);
                     r.setKicker(4);
+                    r.setHighestCardIndex(1);
+                    r.setHandValue(3);
                     return r;
                 }
                 else if (sorted[0].getValueInt() > sorted[4].getValueInt())
                 {
                     r.setTrips(true);
                     r.setKicker(0);
+                    r.setHighestCardIndex(1);
+                    r.setHandValue(3);
                     return r;
                 }
                 else
                 {
                     r.setTrips(true);
                     r.setKicker(4);
+                    r.setHighestCardIndex(1);
+                    r.setHandValue(3);
                     return r;
                 }
             }
@@ -129,24 +167,32 @@ namespace Poker_Coach
                 {
                     r.setTrips(true);
                     r.setKicker(0);
+                    r.setHighestCardIndex(2);
+                    r.setHandValue(3);
                     return r;
                 }
                 else if (sorted[1].getValueInt() == 1)
                 {
                     r.setTrips(true);
                     r.setKicker(1);
+                    r.setHighestCardIndex(2);
+                    r.setHandValue(3);
                     return r;
                 }
                 else if (sorted[0].getValueInt() > sorted[1].getValueInt())
                 {
                     r.setTrips(true);
                     r.setKicker(0);
+                    r.setHighestCardIndex(2);
+                    r.setHandValue(3);
                     return r;
                 }
                 else
                 {
                     r.setTrips(true);
                     r.setKicker(1);
+                    r.setHighestCardIndex(2);
+                    r.setHandValue(3);
                     return r;
                 }
             }
@@ -160,6 +206,8 @@ namespace Poker_Coach
             {
                 r.setTwoPair(true);
                 r.setKicker(4);
+                r.setHighestCardIndex(0);
+                r.setHandValue(2);
                 return r;
             }
 
@@ -167,6 +215,8 @@ namespace Poker_Coach
             {
                 r.setTwoPair(true);
                 r.setKicker(0);
+                r.setHighestCardIndex(1);
+                r.setHandValue(2);
                 return r;
             }
 
@@ -174,6 +224,8 @@ namespace Poker_Coach
             {
                 r.setTwoPair(true);
                 r.setKicker(2);
+                r.setHighestCardIndex(0);
+                r.setHandValue(2);
                 return r;
             }
 
@@ -190,6 +242,8 @@ namespace Poker_Coach
 
                 r.setPair(true);
                 r.setKicker(Card.maxIndex(temp)+2);
+                r.setHighestCardIndex(0);
+                r.setHandValue(1);
                 return r;
             }
 
@@ -202,6 +256,8 @@ namespace Poker_Coach
 
                 r.setPair(true);
                 r.setKicker(Card.maxIndex(temp)+2);
+                r.setHighestCardIndex(1);
+                r.setHandValue(1);
                 return r;
             }
 
@@ -214,6 +270,8 @@ namespace Poker_Coach
 
                 r.setPair(true);
                 r.setKicker(Card.maxIndex(temp)+2);
+                r.setHighestCardIndex(2);
+                r.setHandValue(1);
                 return r;
             }
 
@@ -226,6 +284,8 @@ namespace Poker_Coach
 
                 r.setPair(true);
                 r.setKicker(Card.maxIndex(temp) + 2);
+                r.setHighestCardIndex(3);
+                r.setHandValue(1);
                 return r;
             }
 
@@ -234,10 +294,14 @@ namespace Poker_Coach
             if (sorted[4].getValueInt() == 1)
             {
                 r.setKicker(4);
+                r.setHighestCardIndex(4);
+                r.setHandValue(0);
             }
             else
             {
                 r.setKicker(0);
+                r.setHighestCardIndex(0);
+                r.setHandValue(0);
             }
 
             return r;
@@ -252,6 +316,8 @@ namespace Poker_Coach
                 && sorted[3].getValueInt() == 10 && sorted[4].getValueInt() == 1)
             {
                 r.setStraight(true);
+                r.setHighestCardIndex(4);
+                r.setHandValue(4);
                 return r;
             }
 
@@ -259,6 +325,8 @@ namespace Poker_Coach
                 && sorted[2].getValueInt() == sorted[3].getValueInt() + 1 && sorted[3].getValueInt() == sorted[4].getValueInt() + 1)
             {
                 r.setStraight(true);
+                r.setHighestCardIndex(0);
+                r.setHandValue(4);
                 return r;
             }
 
@@ -282,6 +350,17 @@ namespace Poker_Coach
             }
 
             r.setFlush(true);
+
+            if (sorted[4].getValueInt() == 1)
+            {
+                r.setHighestCardIndex(4);
+            }
+            else
+            {
+                r.setHighestCardIndex(0);
+            }
+            
+            r.setHandValue(5);
             return r;
         }
 
@@ -299,9 +378,14 @@ namespace Poker_Coach
                 {
                     isflush.setStraight(true);
                     isflush.setRoyalFlush(true);
+                    isflush.setHighestCardIndex(4);
+                    isflush.setHandValue(9);
+
                     return isflush;
                 }
 
+                isflush.setHighestCardIndex(0);
+                isflush.setHandValue(8);
                 isflush.setStraight(true);
                 return isflush;
             }
