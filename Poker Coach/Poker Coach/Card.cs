@@ -253,6 +253,21 @@ namespace Poker_Coach
                 return three;
             }
         }
+
+        public static int maxIndex(List<Card> cards)
+        {
+            int index = 0;
+
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (cards[i].getValueInt() > cards[index].getValueInt())
+                {
+                    index = i;
+                }
+            }
+
+            return index;
+        }
     }
 }
 
