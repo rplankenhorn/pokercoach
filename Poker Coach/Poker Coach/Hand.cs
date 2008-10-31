@@ -19,6 +19,35 @@ namespace Poker_Coach
         private Boolean pair;
         private Boolean highcard;
 
+        /**
+         * High Card = 0;
+         * Pair = 1;
+         * Twopair = 2;
+         * Trips = 3;
+         * Straight = 4;
+         * Flush = 5;
+         * Fullhouse = 6;
+         * Quads = 7;
+         * Straight Flush = 8;
+         * Royal Flush = 9;
+         */ 
+        private int handvalue;
+
+        /**
+         * Stores the index of the highest card that is apart of the hand.
+         * Example:
+         * A2222 would store index 1 as highestCard because the 2 is what
+         * makes the hand.
+         * 
+         * In the case of a full house, it sets the value of the trips.
+         * Example:
+         * AAKKK would store index 2 as highestCard.
+         * 
+         * This is used for hand comparisons where if you had two pair and the
+         * river gave you a higher two pair.
+         */ 
+        private int highestCard;
+
         public Hand(List<Card> bestHand)
         {
             this.bestHand = new List<Card>(bestHand);
@@ -32,6 +61,28 @@ namespace Poker_Coach
             twopair = false;
             pair = false;
             highcard = false;
+            handvalue = 0;
+            highestCard = -1;
+        }
+
+        public int getHandValue()
+        {
+            return handvalue;
+        }
+
+        public void setHandValue(int hv)
+        {
+            handvalue = hv;
+        }
+
+        public int getHighestCardIndex()
+        {
+            return highestCard;
+        }
+
+        public void setHighestCardIndex(int hc)
+        {
+            highestCard = hc;
         }
 
         public override string ToString()
