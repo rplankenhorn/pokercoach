@@ -215,7 +215,16 @@ namespace Poker_Coach
             {
                 r.setTwoPair(true);
                 r.setKicker(0);
-                r.setHighestCardIndex(1);
+
+                if (sorted[3].getValueInt() == 1)
+                {
+                    r.setHighestCardIndex(3);
+                }
+                else
+                {
+                    r.setHighestCardIndex(1);
+                }
+
                 r.setHandValue(2);
                 return r;
             }
@@ -224,7 +233,16 @@ namespace Poker_Coach
             {
                 r.setTwoPair(true);
                 r.setKicker(2);
-                r.setHighestCardIndex(0);
+
+                if (sorted[3].getValueInt() == 1)
+                {
+                    r.setHighestCardIndex(3);
+                }
+                else
+                {
+                    r.setHighestCardIndex(0);
+                }
+
                 r.setHandValue(2);
                 return r;
             }
