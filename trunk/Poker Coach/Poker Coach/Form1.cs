@@ -20,6 +20,7 @@ namespace Poker_Coach
 
         public Card[,] cardsLeft;
 
+        public Hand curhand;
         //all of these doubles are percent values
      
 
@@ -81,8 +82,14 @@ namespace Poker_Coach
                     ", and " + community[2].ToString();
 
                 FlopOdds flpodds = new FlopOdds();
+                curhand = flpodds.determineStraightFlush(holecards, community);
 
-                txtStatus.Text += "\r\nYou have: " + flpodds.determinePair(holecards, community) + " post flop\r\n";
+                if (!curhand.getFlush() && !curhand.getStraight() && !curhand.getRoyalFlush())
+                {
+                    curhand = flpodds.determinePair(holecards, community);
+                }
+
+                txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post flop\r\n";
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
             }

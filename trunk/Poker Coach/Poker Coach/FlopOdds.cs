@@ -382,6 +382,133 @@ namespace Poker_Coach
             return r;
         }
 
+        /**
+         * Up and Down straight draw and gapped straight draw
+         */ 
+        public Hand determineStraightDraw(List<Card> holecards, List<Card> community)
+        {
+            List<Card> sorted = sortHoleAndCommunity(holecards, community);
+            Hand r = new Hand(sorted);
+
+            if (sorted[0].getValueInt() == 13 && sorted[1].getValueInt() == 12 && sorted[2].getValueInt() == 11
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else if(sorted[0].getValueInt()-1 == sorted[1].getValueInt() && 
+                sorted[1].getValueInt()-1 == sorted[2].getValueInt() && sorted[2].getValueInt()-1 == sorted[3].getValueInt())
+            {
+                r.setFourCardStraight(true);
+                r.setStraightOuts(8);
+                return r;
+            }
+            else if (sorted[1].getValueInt() - 1 == sorted[2].getValueInt() &&
+                sorted[2].getValueInt() - 1 == sorted[3].getValueInt() && sorted[3].getValueInt() - 1 == sorted[4].getValueInt())
+            {
+                r.setFourCardStraight(true);
+                r.setStraightOuts(8);
+                return r;
+            }
+            else if (sorted[0].getValueInt() == 13 && sorted[1].getValueInt() == 11 && sorted[2].getValueInt() == 10
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else if (sorted[0].getValueInt() == 12 && sorted[1].getValueInt() == 11 && sorted[2].getValueInt() == 10
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else if (sorted[0].getValueInt() == 13 && sorted[1].getValueInt() == 12 && sorted[2].getValueInt() == 10
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            /*
+             * X6432
+             */ 
+            else if (sorted[1].getValueInt()-2 == sorted[2].getValueInt() &&
+                sorted[2].getValueInt()-1 == sorted[3].getValueInt() && sorted[3].getValueInt()-1 == sorted[4].getValueInt())
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            /*
+             * 6432X
+             */
+            else if (sorted[0].getValueInt()-2 == sorted[1].getValueInt() &&
+                sorted[1].getValueInt()-1 == sorted[2].getValueInt() && sorted[2].getValueInt()-1 == sorted[3].getValueInt())
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            /*
+             * X6532
+             */
+            else if (sorted[1].getValueInt()-1 == sorted[2].getValueInt() &&
+                sorted[2].getValueInt()-2 == sorted[3].getValueInt() && sorted[3].getValueInt()-1 == sorted[4].getValueInt())
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            /*
+             * 6532X
+             */
+            else if (sorted[0].getValueInt()-1 == sorted[1].getValueInt() &&
+                sorted[1].getValueInt()-2 == sorted[2].getValueInt() && sorted[2].getValueInt()-1 == sorted[3].getValueInt())
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            /*
+             * X6542
+             */
+            else if (sorted[1].getValueInt()-1 == sorted[2].getValueInt() &&
+                sorted[2].getValueInt()-1 == sorted[3].getValueInt() && sorted[3].getValueInt()-2 == sorted[4].getValueInt())
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            /*
+             * 6542X
+             */
+            else if (sorted[0].getValueInt() - 1 == sorted[1].getValueInt() &&
+                sorted[1].getValueInt() - 1 == sorted[2].getValueInt() && sorted[2].getValueInt() - 2 == sorted[3].getValueInt())
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else
+            {
+                r.setFourCardStraight(false);
+                r.setGappedStraight(false);
+                return r;
+            }
+        }
+
         public Hand determineStraightFlush(List<Card> holecards, List<Card> community)
         {
             Hand isflush = determineFlush(holecards, community);

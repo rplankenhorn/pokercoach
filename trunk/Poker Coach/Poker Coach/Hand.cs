@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Poker_Coach
 {
-    class Hand
+    public class Hand
     {
         private List<Card> bestHand;
         private int kicker;
@@ -18,6 +18,14 @@ namespace Poker_Coach
         private Boolean twopair;
         private Boolean pair;
         private Boolean highcard;
+        
+        /*
+         * Drawing Hands
+         */
+        private Boolean fourCardStraight;
+        private Boolean gappedStraight;
+
+        private int[] numOfOuts;
 
         /**
          * High Card = 0;
@@ -63,6 +71,115 @@ namespace Poker_Coach
             highcard = false;
             handvalue = 0;
             highestCard = -1;
+
+            fourCardStraight = false;
+            gappedStraight = false;
+            numOfOuts = new int[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                numOfOuts[i] = 0;
+            }
+        }
+
+        public Boolean getGappedStraight()
+        {
+            return gappedStraight;
+        }
+
+        public void setGappedStraight(Boolean gap)
+        {
+            gappedStraight = gap;
+        }
+
+        public void setRoyalFlushOuts(int outs)
+        {
+            numOfOuts[9] = outs;
+        }
+
+        public int getRoyalFlushOuts()
+        {
+            return numOfOuts[9];
+        }
+
+        public void setStraightFlushOuts(int outs)
+        {
+            numOfOuts[8] = outs;
+        }
+
+        public int getStraightFlushOuts()
+        {
+            return numOfOuts[8];
+        }
+
+        public void setQuadOuts(int outs)
+        {
+            numOfOuts[7] = outs;
+        }
+
+        public int getQuadOuts()
+        {
+            return numOfOuts[7];
+        }
+
+        public void setFullHouseOuts(int outs)
+        {
+            numOfOuts[6] = outs;
+        }
+
+        public int getFullHouseOuts()
+        {
+            return numOfOuts[6];
+        }
+
+        public void setFlushOuts(int outs)
+        {
+            numOfOuts[5] = outs;
+        }
+
+        public int getFlushOuts()
+        {
+            return numOfOuts[5];
+        }
+
+        public void setStraightOuts(int outs)
+        {
+            numOfOuts[4] = outs;
+        }
+
+        public int getStraightOuts()
+        {
+            return numOfOuts[4];
+        }
+
+        public void setTripOuts(int outs)
+        {
+            numOfOuts[3] = outs;
+        }
+
+        public int getTripOuts()
+        {
+            return numOfOuts[3];
+        }
+
+        public void setTwoPairOuts(int outs)
+        {
+            numOfOuts[2] = outs;
+        }
+
+        public int getTwoPairOuts()
+        {
+            return numOfOuts[2];
+        }
+
+        public void setPairOuts(int outs)
+        {
+            numOfOuts[1] = outs;
+        }
+
+        public int getPairOuts()
+        {
+            return numOfOuts[1];
         }
 
         public int getHandValue()
@@ -145,7 +262,7 @@ namespace Poker_Coach
                 {
                     return "Trip " + bestHand[0].formatCardValuePlural() + " with " + bestHand[kicker].formatCardValue() + " kicker";
                 }
-                else if(bestHand[1].getValueInt() == bestHand[3].getValueInt()
+                else if(bestHand[1].getValueInt() == bestHand[3].getValueInt())
                 {
                     return "Trip " + bestHand[1].formatCardValuePlural() + " with " + bestHand[kicker].formatCardValue() + " kicker";
                 }
@@ -302,6 +419,16 @@ namespace Poker_Coach
         public void setHighCard(Boolean hCard)
         {
             highcard = hCard;
+        }
+
+        public Boolean getFourCardStraight()
+        {
+            return fourCardStraight;
+        }
+
+        public void setFourCardStraight(Boolean str)
+        {
+            fourCardStraight = str;
         }
     }
 }
