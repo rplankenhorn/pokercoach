@@ -10,3 +10,9 @@ http://forumserver.twoplustwo.com/15/poker-theory/reverse-implied-odds-probabili
 If you hold 87s, then you may flop 9-10-j , 6-9-10, 5-6-9, 4-5-6 with each occurring with probability (4^3 - 1)/50C3. The probability you flop a straight is therefore, (4^4-4)/50C3 ~ 1.2857% . This excludes the possibility that you flop a straight flush (4 of them) which needs to be subtracted from the overal total. 
 
 http://www.flopturnriver.com/Common-Flop-Odds.html
+
+Here is a paper on a heuristic function for Texas Hold'em:
+http://katja.kumpula.helsinki.fi/dspace/bitstream/10138/1156/1/C-2008-41.pdf
+
+Here is a dumb down version of what we are trying to do:
+http://www.codeproject.com/KB/game/pokerhandevaldoc.aspx
