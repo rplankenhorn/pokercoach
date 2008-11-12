@@ -183,6 +183,21 @@ namespace Poker_Coach
                 cardsLeft[community[3].getSuitInt(), community[3].getValueInt()] = new Card(0, 0);
 
                 txtStatus.Text += "\r\n\r\nTurn Updated: " + turn.ToString();
+
+                TurnOdds trnodds = new TurnOdds();
+
+                curhand = trnodds.determineBestHand(holecards, community);
+
+                txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post flop\r\n";
+                txtStatus.SelectionStart = txtStatus.Text.Length;
+                txtStatus.ScrollToCaret();
+
+                Coach ourCoach = new Coach(1);
+
+
+                txtCoach.Text += ourCoach.postFlopDecision(curhand);
+                txtCoach.SelectionStart = txtStatus.Text.Length;
+                txtCoach.ScrollToCaret();
             }
         }
 

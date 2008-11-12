@@ -382,6 +382,32 @@ namespace Poker_Coach
             return r;
         }
 
+        public Hand determineFlushDraw(List<Card> holecards, List<Card> community)
+        {
+            List<Card> sorted = sortHoleAndCommunitySuits(holecards, community);
+            Hand r = new Hand(sorted);
+
+            if (sorted[0].getSuitInt() == sorted[1].getSuitInt() && sorted[1].getSuitInt() == sorted[2].getSuitInt()
+                && sorted[2].getSuitInt() == sorted[3].getSuitInt())
+            {
+                r.setFlushDraw(true);
+                r.setFlushOuts(9);
+                return r;
+            }
+            else if (sorted[1].getSuitInt() == sorted[2].getSuitInt() && sorted[2].getSuitInt() == sorted[3].getSuitInt()
+                && sorted[3].getSuitInt() == sorted[4].getSuitInt())
+            {
+                r.setFlushDraw(true);
+                r.setFlushOuts(9);
+                return r;
+            }
+            else
+            {
+                r.setFlushDraw(false);
+                return r;
+            }
+        }
+
         /**
          * Up and Down straight draw and gapped straight draw
          */ 
@@ -560,6 +586,31 @@ namespace Poker_Coach
                 for (int i = 0; i < total.Count; i++)
                 {
                     if (total[i].getValue() > total[maxindex].getValue())
+                    {
+                        maxindex = i;
+                    }
+                }
+
+                totalSorted.Add(total[maxindex]);
+                total.RemoveAt(maxindex);
+                maxindex = 0;
+            }
+
+            return totalSorted;
+        }
+
+        public List<Card> sortHoleAndCommunitySuits(List<Card> holecards, List<Card> community)
+        {
+            List<Card> total = new List<Card>(holecards);
+            total.AddRange(community);
+            List<Card> totalSorted = new List<Card>(5);
+            int maxindex = 0;
+
+            while (total.Count > 0)
+            {
+                for (int i = 0; i < total.Count; i++)
+                {
+                    if (total[i].getSuit() > total[maxindex].getSuit())
                     {
                         maxindex = i;
                     }

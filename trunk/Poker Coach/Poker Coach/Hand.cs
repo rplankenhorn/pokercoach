@@ -24,6 +24,7 @@ namespace Poker_Coach
          */
         private Boolean fourCardStraight;
         private Boolean gappedStraight;
+        private Boolean flushDraw;
 
         private int[] numOfOuts;
 
@@ -74,12 +75,24 @@ namespace Poker_Coach
 
             fourCardStraight = false;
             gappedStraight = false;
+            flushDraw = false;
+
             numOfOuts = new int[10];
 
             for (int i = 0; i < 10; i++)
             {
                 numOfOuts[i] = 0;
             }
+        }
+
+        public Boolean getFlushDraw()
+        {
+            return flushDraw;
+        }
+
+        public void setFlushDraw(Boolean fd)
+        {
+            flushDraw = fd;
         }
 
         public Boolean getGappedStraight()
