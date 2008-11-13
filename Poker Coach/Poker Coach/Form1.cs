@@ -188,7 +188,7 @@ namespace Poker_Coach
 
                 curhand = trnodds.determineBestHand(holecards, community);
 
-                txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post flop\r\n";
+                txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post turn\r\n";
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
 
