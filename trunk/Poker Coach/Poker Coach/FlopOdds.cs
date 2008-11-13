@@ -259,7 +259,8 @@ namespace Poker_Coach
                 temp.Add(sorted[4]);
 
                 r.setPair(true);
-                r.setKicker(Card.maxIndex(temp)+2);
+                //r.setKicker(Card.maxIndex(temp)+2);
+                r.setKicker(2);
                 r.setHighestCardIndex(0);
                 r.setHandValue(1);
                 return r;
@@ -273,7 +274,8 @@ namespace Poker_Coach
                 temp.Add(sorted[4]);
 
                 r.setPair(true);
-                r.setKicker(Card.maxIndex(temp)+2);
+                //r.setKicker(Card.maxIndex(temp)+2);
+                r.setKicker(0);
                 r.setHighestCardIndex(1);
                 r.setHandValue(1);
                 return r;
@@ -287,7 +289,8 @@ namespace Poker_Coach
                 temp.Add(sorted[4]);
 
                 r.setPair(true);
-                r.setKicker(Card.maxIndex(temp)+2);
+                //r.setKicker(Card.maxIndex(temp)+2);
+                r.setKicker(0);
                 r.setHighestCardIndex(2);
                 r.setHandValue(1);
                 return r;
@@ -301,7 +304,8 @@ namespace Poker_Coach
                 temp.Add(sorted[2]);
 
                 r.setPair(true);
-                r.setKicker(Card.maxIndex(temp) + 2);
+                //r.setKicker(Card.maxIndex(temp) + 2);
+                r.setKicker(0);
                 r.setHighestCardIndex(3);
                 r.setHandValue(1);
                 return r;

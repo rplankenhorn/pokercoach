@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.InteropServices;
 
 namespace Poker_Coach
 {
     class TurnOdds
     {
+        /**
+         * Console for debugging
+         */ 
+        [DllImport("kernel32")]
+        static extern bool AllocConsole();
+
         public Hand determineBestHand(List<Card> holecards, List<Card> community)
         {
+            /**
+             * Show Debug console
+             */ 
+            AllocConsole();
+
             FlopOdds flpodds = new FlopOdds();
 
             List<Card> sorted = flpodds.sortHoleAndCommunity(holecards, community);
@@ -114,6 +126,12 @@ namespace Poker_Coach
             }
 
             Hand best = pos0;
+
+            Console.WriteLine("pos0=" + pos0.getHandValue());
+            Console.WriteLine("pos1=" + pos1.getHandValue());
+            Console.WriteLine("pos2=" + pos2.getHandValue());
+            Console.WriteLine("pos3=" + pos3.getHandValue());
+            Console.WriteLine("pos4=" + pos4.getHandValue());
 
             if (best.getHandValue() < pos1.getHandValue())
             {
