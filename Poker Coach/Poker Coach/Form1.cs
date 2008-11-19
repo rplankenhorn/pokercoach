@@ -194,7 +194,6 @@ namespace Poker_Coach
 
                 Coach ourCoach = new Coach(1);
 
-
                 txtCoach.Text += ourCoach.postFlopDecision(curhand);
                 txtCoach.SelectionStart = txtStatus.Text.Length;
                 txtCoach.ScrollToCaret();
