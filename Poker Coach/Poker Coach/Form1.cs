@@ -18,12 +18,11 @@ namespace Poker_Coach
         //List to store community cards (Flop, turn, river)
         public List<Card> community;
 
-        public Card[,] cardsLeft;
+        //public Card[,] cardsLeft;
 
         public Hand curhand;
         //all of these doubles are percent values
      
-
 
         public Form1()
         {
@@ -31,6 +30,7 @@ namespace Poker_Coach
             txtCoach.Text += "Welcome, let's win kid...\r\n\rInput your two cards\r\n\r";
         }
 
+        /*
         private void populateCardsLeft()
         {
             //Array for storing cards left in deck.
@@ -51,6 +51,7 @@ namespace Poker_Coach
                 }
             }
         }
+         */
 
         private void cmdFlopUpdate_Click(object sender, EventArgs e)
         {
@@ -64,19 +65,19 @@ namespace Poker_Coach
                 SUITS suit = (SUITS)Enum.Parse(typeof(SUITS), cbbxFlopCard1Suit.SelectedItem.ToString(), true);
 
                 community.Add(new Card(suit, value));
-                cardsLeft[community[0].getSuitInt(), community[0].getValueInt()] = new Card(0, 0);
+                //cardsLeft[community[0].getSuitInt(), community[0].getValueInt()] = new Card(0, 0);
 
                 value = (CARDVALUE)Enum.Parse(typeof(CARDVALUE), cbbxFlopCard2Value.SelectedItem.ToString(), true);
                 suit = (SUITS)Enum.Parse(typeof(SUITS), cbbxFlopCard2Suit.SelectedItem.ToString(), true);
 
                 community.Add(new Card(suit, value));
-                cardsLeft[community[1].getSuitInt(), community[1].getValueInt()] = new Card(0, 0);
+                //cardsLeft[community[1].getSuitInt(), community[1].getValueInt()] = new Card(0, 0);
 
                 value = (CARDVALUE)Enum.Parse(typeof(CARDVALUE), cbbxFlopCard3Value.SelectedItem.ToString(), true);
                 suit = (SUITS)Enum.Parse(typeof(SUITS), cbbxFlopCard3Suit.SelectedItem.ToString(), true);
 
                 community.Add(new Card(suit, value));
-                cardsLeft[community[2].getSuitInt(), community[2].getValueInt()] = new Card(0, 0);
+                //cardsLeft[community[2].getSuitInt(), community[2].getValueInt()] = new Card(0, 0);
 
                 txtStatus.Text += "\r\n\r\nFlop is: " + community[0].ToString() + ", " + community[1].ToString() +
                     ", and " + community[2].ToString();
@@ -89,7 +90,32 @@ namespace Poker_Coach
                     curhand = flpodds.determinePair(holecards, community);
                 }
 
+                Hand temp = flpodds.determineStraightDraw(holecards, community);
+
+                if (temp.getFourCardStraight() && !curhand.getStraight())
+                {
+                    curhand.setFourCardStraight(true);
+                }
+
+                temp = flpodds.determineFlushDraw(holecards, community);
+
+                if (temp.getFlushDraw() && !curhand.getFlush())
+                {
+                    curhand.setFlushDraw(true);
+                }
+
                 txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post flop\r\n";
+
+                if (curhand.getFlushDraw())
+                {
+                    txtStatus.Text += "You also have a flush draw.\r\n";
+                }
+
+                if (curhand.getFourCardStraight())
+                {
+                    txtStatus.Text += "You also have a straight draw.\r\n";
+                }
+
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
 
@@ -110,7 +136,7 @@ namespace Poker_Coach
                 cbbxCardValue1.SelectedIndex > -1 && cbbxCardValue2.SelectedIndex > -1)
             {
                 //Deck Initialize
-                populateCardsLeft();
+                //populateCardsLeft();
 
                 //Initialize List
                 holecards = new List<Card>(2);
@@ -137,8 +163,8 @@ namespace Poker_Coach
                 preFlopOdds pre = new preFlopOdds(card1, card2, (int) numPlayers.Value);
                 odds = pre.getOdds();
 
-                cardsLeft[holecards[0].getSuitInt(), holecards[0].getValueInt()] = new Card(0,0);
-                cardsLeft[holecards[1].getSuitInt(), holecards[1].getValueInt()] = new Card(0,0);
+                //cardsLeft[holecards[0].getSuitInt(), holecards[0].getValueInt()] = new Card(0,0);
+                //cardsLeft[holecards[1].getSuitInt(), holecards[1].getValueInt()] = new Card(0,0);
                 
                 //update preflop hand probabilites, these are hands you can make with the flop ONLY!!!
                 Royal.Text = pre.getRoyal().ToString() + "%";
@@ -180,7 +206,7 @@ namespace Poker_Coach
                 Card turn = new Card(suit, value);
 
                 community.Add(turn);
-                cardsLeft[community[3].getSuitInt(), community[3].getValueInt()] = new Card(0, 0);
+                //cardsLeft[community[3].getSuitInt(), community[3].getValueInt()] = new Card(0, 0);
 
                 txtStatus.Text += "\r\n\r\nTurn Updated: " + turn.ToString();
 
@@ -188,7 +214,32 @@ namespace Poker_Coach
 
                 curhand = trnodds.determineBestHand(holecards, community);
 
+                Hand temp = trnodds.determineStraightDraw(holecards, community);
+
+                if (temp.getFourCardStraight() && !curhand.getStraight())
+                {
+                    curhand.setFourCardStraight(true);
+                }
+
+                temp = trnodds.determineFlushDraw(holecards, community);
+
+                if (temp.getFlushDraw() && !curhand.getFlush())
+                {
+                    curhand.setFlushDraw(true);
+                }
+
                 txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post turn\r\n";
+
+                if (curhand.getFlushDraw())
+                {
+                    txtStatus.Text += "You also have a flush draw.\r\n";
+                }
+
+                if (curhand.getFourCardStraight())
+                {
+                    txtStatus.Text += "You also have a straight draw.\r\n";
+                }
+
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
 
@@ -211,7 +262,7 @@ namespace Poker_Coach
                 Card river = new Card(suit, value);
 
                 community.Add(river);
-                cardsLeft[community[4].getSuitInt(), community[4].getValueInt()] = new Card(0, 0);
+                //cardsLeft[community[4].getSuitInt(), community[4].getValueInt()] = new Card(0, 0);
 
                 txtStatus.Text += "\r\n\r\nRiver Updated: " + river.ToString();
 

@@ -222,5 +222,165 @@ namespace Poker_Coach
 
             return best;
         }
+
+        public Hand determineStraightDraw(List<Card> holecards, List<Card> community)
+        {
+            FlopOdds flp = new FlopOdds();
+
+            Hand h1, h2, h3, h4, h5, h6;
+
+            List<Card> hole1 = new List<Card>(holecards);
+            List<Card> com1 = new List<Card>();
+            com1.Add(community[0]);
+            com1.Add(community[1]);
+            com1.Add(community[2]);
+
+            List<Card> hole2 = new List<Card>(holecards);
+            List<Card> com2 = new List<Card>(community);
+            com2.RemoveAt(2);
+
+            List<Card> hole3 = new List<Card>(holecards);
+            List<Card> com3 = new List<Card>(community);
+            com3.RemoveAt(1);
+
+            List<Card> hole4 = new List<Card>(holecards);
+            List<Card> com4 = new List<Card>(community);
+            com4.RemoveAt(0);
+
+            List<Card> hole5 = new List<Card>();
+            List<Card> com5 = new List<Card>();
+            hole5.Add(holecards[0]);
+            hole5.Add(community[0]);
+            com5.Add(community[1]);
+            com5.Add(community[2]);
+            com5.Add(community[3]);
+
+            List<Card> hole6 = new List<Card>();
+            List<Card> com6 = new List<Card>();
+            hole6.Add(holecards[1]);
+            hole6.Add(community[0]);
+            com6.Add(community[1]);
+            com6.Add(community[2]);
+            com6.Add(community[3]);
+
+            h1 = flp.determineStraightDraw(hole1, com1);
+            h2 = flp.determineStraightDraw(hole2, com2);
+            h3 = flp.determineStraightDraw(hole3, com3);
+            h4 = flp.determineStraightDraw(hole4, com4);
+            h5 = flp.determineStraightDraw(hole5, com5);
+            h6 = flp.determineStraightDraw(hole6, com6);
+
+            if (h1.getFourCardStraight())
+            {
+                return h1;
+            }
+
+            if (h2.getFourCardStraight())
+            {
+                return h2;
+            }
+
+            if (h3.getFourCardStraight())
+            {
+                return h3;
+            }
+
+            if (h4.getFourCardStraight())
+            {
+                return h4;
+            }
+
+            if (h5.getFourCardStraight())
+            {
+                return h5;
+            }
+
+            if (h6.getFourCardStraight())
+            {
+                return h6;
+            }
+
+            return h1;
+        }
+
+        public Hand determineFlushDraw(List<Card> holecards, List<Card> community)
+        {
+            FlopOdds flp = new FlopOdds();
+
+            Hand h1, h2, h3, h4, h5, h6;
+
+            List<Card> hole1 = new List<Card>(holecards);
+            List<Card> com1 = new List<Card>();
+            com1.Add(community[0]);
+            com1.Add(community[1]);
+            com1.Add(community[2]);
+
+            List<Card> hole2 = new List<Card>(holecards);
+            List<Card> com2 = new List<Card>(community);
+            com2.RemoveAt(2);
+
+            List<Card> hole3 = new List<Card>(holecards);
+            List<Card> com3 = new List<Card>(community);
+            com3.RemoveAt(1);
+
+            List<Card> hole4 = new List<Card>(holecards);
+            List<Card> com4 = new List<Card>(community);
+            com4.RemoveAt(0);
+
+            List<Card> hole5 = new List<Card>();
+            List<Card> com5 = new List<Card>();
+            hole5.Add(holecards[0]);
+            hole5.Add(community[0]);
+            com5.Add(community[1]);
+            com5.Add(community[2]);
+            com5.Add(community[3]);
+
+            List<Card> hole6 = new List<Card>();
+            List<Card> com6 = new List<Card>();
+            hole6.Add(holecards[1]);
+            hole6.Add(community[0]);
+            com6.Add(community[1]);
+            com6.Add(community[2]);
+            com6.Add(community[3]);
+
+            h1 = flp.determineFlushDraw(hole1, com1);
+            h2 = flp.determineFlushDraw(hole2, com2);
+            h3 = flp.determineFlushDraw(hole3, com3);
+            h4 = flp.determineFlushDraw(hole4, com4);
+            h5 = flp.determineFlushDraw(hole5, com5);
+            h6 = flp.determineFlushDraw(hole6, com6);
+
+            if (h1.getFlushDraw())
+            {
+                return h1;
+            }
+
+            if (h2.getFlushDraw())
+            {
+                return h2;
+            }
+
+            if (h3.getFlushDraw())
+            {
+                return h3;
+            }
+
+            if (h4.getFlushDraw())
+            {
+                return h4;
+            }
+
+            if (h5.getFlushDraw())
+            {
+                return h5;
+            }
+
+            if (h6.getFlushDraw())
+            {
+                return h6;
+            }
+
+            return h1;
+        }
     }
 }
