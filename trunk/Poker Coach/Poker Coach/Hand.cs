@@ -210,6 +210,11 @@ namespace Poker_Coach
             return highestCard;
         }
 
+        public int getHighestCardValue()
+        {
+            return bestHand[highestCard].getValueInt();
+        }
+
         public void setHighestCardIndex(int hc)
         {
             highestCard = hc;
@@ -318,9 +323,13 @@ namespace Poker_Coach
                     return "A pair of " + bestHand[3].formatCardValuePlural() + " with " + bestHand[kicker].formatCardValue() + " kicker";
                 }
             }
-            else
+            else if (highcard)
             {
                 return bestHand[kicker].formatCardValue() + " high";
+            }
+            else
+            {
+                return "ERROR: No hand determined!";
             }
         }
 
@@ -337,6 +346,11 @@ namespace Poker_Coach
         public int getKicker()
         {
             return kicker;
+        }
+
+        public int getKickerValue()
+        {
+            return bestHand[kicker].getValueInt();
         }
 
         public void setKicker(int k)

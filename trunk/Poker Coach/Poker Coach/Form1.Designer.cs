@@ -158,6 +158,7 @@
             this.cbbxCardSuit2.Name = "cbbxCardSuit2";
             this.cbbxCardSuit2.Size = new System.Drawing.Size(85, 21);
             this.cbbxCardSuit2.TabIndex = 3;
+            this.cbbxCardSuit2.Text = "Diamonds";
             // 
             // cbbxCardValue2
             // 
@@ -180,6 +181,7 @@
             this.cbbxCardValue2.Name = "cbbxCardValue2";
             this.cbbxCardValue2.Size = new System.Drawing.Size(37, 21);
             this.cbbxCardValue2.TabIndex = 2;
+            this.cbbxCardValue2.Text = "A";
             // 
             // cbbxCardSuit1
             // 
@@ -193,6 +195,7 @@
             this.cbbxCardSuit1.Name = "cbbxCardSuit1";
             this.cbbxCardSuit1.Size = new System.Drawing.Size(85, 21);
             this.cbbxCardSuit1.TabIndex = 1;
+            this.cbbxCardSuit1.Text = "Clubs";
             // 
             // cbbxCardValue1
             // 
@@ -215,6 +218,7 @@
             this.cbbxCardValue1.Name = "cbbxCardValue1";
             this.cbbxCardValue1.Size = new System.Drawing.Size(37, 21);
             this.cbbxCardValue1.TabIndex = 0;
+            this.cbbxCardValue1.Text = "A";
             // 
             // groupBox2
             // 
@@ -257,6 +261,7 @@
             this.cbbxFlopCard3Suit.Name = "cbbxFlopCard3Suit";
             this.cbbxFlopCard3Suit.Size = new System.Drawing.Size(71, 21);
             this.cbbxFlopCard3Suit.TabIndex = 9;
+            this.cbbxFlopCard3Suit.Text = "Clubs";
             // 
             // cbbxFlopCard3Value
             // 
@@ -279,6 +284,7 @@
             this.cbbxFlopCard3Value.Name = "cbbxFlopCard3Value";
             this.cbbxFlopCard3Value.Size = new System.Drawing.Size(37, 21);
             this.cbbxFlopCard3Value.TabIndex = 8;
+            this.cbbxFlopCard3Value.Text = "6";
             // 
             // cbbxFlopCard2Suit
             // 
@@ -292,6 +298,7 @@
             this.cbbxFlopCard2Suit.Name = "cbbxFlopCard2Suit";
             this.cbbxFlopCard2Suit.Size = new System.Drawing.Size(71, 21);
             this.cbbxFlopCard2Suit.TabIndex = 7;
+            this.cbbxFlopCard2Suit.Text = "Clubs";
             // 
             // cbbxFlopCard1Value
             // 
@@ -314,6 +321,7 @@
             this.cbbxFlopCard1Value.Name = "cbbxFlopCard1Value";
             this.cbbxFlopCard1Value.Size = new System.Drawing.Size(37, 21);
             this.cbbxFlopCard1Value.TabIndex = 4;
+            this.cbbxFlopCard1Value.Text = "2";
             // 
             // cbbxFlopCard2Value
             // 
@@ -336,6 +344,7 @@
             this.cbbxFlopCard2Value.Name = "cbbxFlopCard2Value";
             this.cbbxFlopCard2Value.Size = new System.Drawing.Size(37, 21);
             this.cbbxFlopCard2Value.TabIndex = 6;
+            this.cbbxFlopCard2Value.Text = "8";
             // 
             // cbbxFlopCard1Suit
             // 
@@ -349,6 +358,7 @@
             this.cbbxFlopCard1Suit.Name = "cbbxFlopCard1Suit";
             this.cbbxFlopCard1Suit.Size = new System.Drawing.Size(71, 21);
             this.cbbxFlopCard1Suit.TabIndex = 5;
+            this.cbbxFlopCard1Suit.Text = "Clubs";
             // 
             // groupBox3
             // 
@@ -396,6 +406,7 @@
             this.cbbxTurnCardValue.Name = "cbbxTurnCardValue";
             this.cbbxTurnCardValue.Size = new System.Drawing.Size(37, 21);
             this.cbbxTurnCardValue.TabIndex = 10;
+            this.cbbxTurnCardValue.Text = "Q";
             // 
             // cbbxTurnCardSuit
             // 
@@ -409,6 +420,7 @@
             this.cbbxTurnCardSuit.Name = "cbbxTurnCardSuit";
             this.cbbxTurnCardSuit.Size = new System.Drawing.Size(71, 21);
             this.cbbxTurnCardSuit.TabIndex = 11;
+            this.cbbxTurnCardSuit.Text = "Clubs";
             // 
             // groupBox4
             // 
