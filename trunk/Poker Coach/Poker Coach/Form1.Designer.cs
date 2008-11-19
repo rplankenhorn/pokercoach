@@ -816,7 +816,7 @@
             // 
             this.txtCoach.Location = new System.Drawing.Point(155, 19);
             this.txtCoach.Name = "txtCoach";
-            this.txtCoach.Size = new System.Drawing.Size(292, 188);
+            this.txtCoach.Size = new System.Drawing.Size(380, 188);
             this.txtCoach.TabIndex = 9;
             this.txtCoach.Text = "";
             // 

@@ -212,7 +212,14 @@ namespace Poker_Coach
 
         public int getHighestCardValue()
         {
-            return bestHand[highestCard].getValueInt();
+            if (highestCard > -1)
+            {
+                return bestHand[highestCard].getValueInt();
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         public void setHighestCardIndex(int hc)
