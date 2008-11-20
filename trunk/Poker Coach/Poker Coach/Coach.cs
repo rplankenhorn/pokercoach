@@ -164,10 +164,107 @@ namespace Poker_Coach
             }
         }
 
-        public string postFlopDecision(Hand currentHand)
+        public string postFlopDecision(Hand currentHand, double potSize, double costToPlay, double stackSize)
         {
             int value = currentHand.getHandValue();
+            int totalOuts = currentHand.getTotalOuts();
+            double potOdds = potSize / costToPlay;
+            double postFlopOdds = drawingDecisionPostFlopOdds(totalOuts);
+            string decision = "";
 
+            if ((potOdds - postFlopOdds) > 0.5 && !(costToPlay >= stackSize) && postFlopOdds > 0)
+            {
+                decision += "Since your odds are " + postFlopOdds + " to 1, and the pot odds are " + potOdds + " to 1, this is an automatic call if someone raised in front of you.\r\n";
+                decision += "Other advice: " + afterPotOddsDecision(value) + "\r\n";
+
+                return decision;
+            }
+
+            return generalDecision(value);
+        }
+
+        public string postTurnDecision(Hand currentHand, double potSize, double costToPlay, double stackSize)
+        {
+            int value = currentHand.getHandValue();
+            int totalOuts = currentHand.getTotalOuts();
+            double potOdds = potSize / costToPlay;
+            double postTurnOdds = drawingDecisionPostTurnOdds(totalOuts);
+            string decision = "";
+
+            if ((potOdds - postTurnOdds) > 0.5 && !(costToPlay >= stackSize) && postTurnOdds > 0)
+            {
+                decision += "Since your odds are " + postTurnOdds + " to 1, and the pot odds are " + potOdds + " to 1, this is an automatic call if someone in front of you.\r\n\r\n";
+                decision += "Other advice: " + afterPotOddsDecision(value) + "\r\n";
+
+                return decision;
+            }
+
+            return generalDecision(value);
+        }
+
+        public string postRiverDecision(Hand currentHand, double potSize, double costToPlay, double stackSize)
+        {
+            int value = currentHand.getHandValue();
+            int totalOuts = currentHand.getTotalOuts();
+            double potOdds = potSize / costToPlay;
+            double postTurnOdds = drawingDecisionPostTurnOdds(totalOuts);
+            string decision = "";
+
+            if ((potOdds - postTurnOdds) > 0.5 && !(costToPlay >= stackSize) && postTurnOdds > 0)
+            {
+                decision += "Since your odds are " + postTurnOdds + " to 1, and the pot odds are " + potOdds + " to 1, this is an automatic call if somone in front of you.\r\n\r\n";
+                decision += "Other advice: " + afterPotOddsDecision(value) + "\r\n";
+            }
+
+            return generalDecision(value);
+        }
+
+        public string afterPotOddsDecision(int value)
+        {
+            if (value == 0)
+            {
+                return "If no raises, check here.\r\n\r";
+            }
+            if (value == 1)
+            {
+                return "If no raises, raise with top pair or over pair, check with other pairs.\r\n\r";
+            }
+            if (value == 2)
+            {
+                return "If no raises, two pair is a strong hand, raise 1/4 of the pot.\r\n\r";
+            }
+            if (value == 3)
+            {
+                return "If no raises, with trips, raise up to 1/2 the pot. Play strong.\r\n\r";
+            }
+            if (value == 4)
+            {
+                return "If no raises, with a straight, bet hard against any large raises. Raise 1/2 the pot in early position.\r\n\r";
+            }
+            if (value == 5)
+            {
+                return "If no raises, with a flush, raise 1/2 the pot in early position.\r\n\r";
+            }
+            if (value == 6)
+            {
+                return "If no raises, with a full house, slow play your full house because you most likely have the nuts.\r\n\r";
+            }
+            if (value == 7)
+            {
+                return "If no raises, you have a monster, encourage betting from other players. Do not raise too much to scare off action.\r\n\r";
+            }
+            if (value == 8)
+            {
+                return "If no raises, you have a monster, encourage betting from other players. Do not raise too much to scare off action.\r\n\r";
+            }
+            else
+            {
+                return "If no raises, try to encourage action and bask in the glory of a hand that comes only a few times in a lifetime.\r\n\r";
+            }
+        }
+
+        public string generalDecision(int value)
+        {
             if (value == 0)
             {
                 return "You only have a high card, check or fold to a raise\r\n\r";

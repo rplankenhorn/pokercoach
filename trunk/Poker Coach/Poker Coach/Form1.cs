@@ -148,6 +148,8 @@ namespace Poker_Coach
                     }
                 }
 
+                curhand.setTotalOuts(totalOuts);
+
                 txtStatus.Text += "        with your total outs equalling " + totalOuts + ".";
 
                 txtStatus.SelectionStart = txtStatus.Text.Length;
@@ -156,7 +158,7 @@ namespace Poker_Coach
                 Coach ourCoach = new Coach(1);
 
 
-                txtCoach.Text += ourCoach.postFlopDecision(curhand);
+                txtCoach.Text += "Flop Decision: " + ourCoach.postFlopDecision(curhand,(double)numPotSize.Value,(double)numCostToPlay.Value,(double)numChipCount.Value);
                 txtCoach.SelectionStart = txtStatus.Text.Length;
                 txtCoach.ScrollToCaret();
             }
@@ -253,6 +255,7 @@ namespace Poker_Coach
                 if (temp.getFourCardStraight() && !curhand.getStraight())
                 {
                     curhand.setFourCardStraight(true);
+                    curhand.setStraightOuts(temp.getStraightOuts());
                 }
 
                 temp = trnodds.determineFlushDraw(holecards, community);
@@ -260,26 +263,54 @@ namespace Poker_Coach
                 if (temp.getFlushDraw() && !curhand.getFlush())
                 {
                     curhand.setFlushDraw(true);
+                    curhand.setFlushOuts(temp.getFlushOuts());
                 }
 
                 txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post turn\r\n";
 
+                int totalOuts = 0;
+
                 if (curhand.getFlushDraw())
                 {
-                    txtStatus.Text += "You also have a flush draw.\r\n";
+                    txtStatus.Text += "You also have a flush draw with " + curhand.getFlushOuts() + " outs.\r\n";
+                    totalOuts += curhand.getFlushOuts();
                 }
 
                 if (curhand.getFourCardStraight())
                 {
-                    txtStatus.Text += "You also have a straight draw.\r\n";
+                    txtStatus.Text += "You also have a straight draw " + curhand.getStraightOuts() + " outs.\r\n";
+
+                    if (totalOuts > 0)
+                    {
+                        totalOuts += (curhand.getStraightOuts() - 1);
+                    }
+                    else
+                    {
+                        totalOuts += curhand.getStraightOuts();
+                    }
                 }
+                else if (curhand.getGappedStraight())
+                {
+                    txtStatus.Text += "You also have a straight draw " + curhand.getStraightOuts() + " outs.\r\n";
+
+                    if (totalOuts > 0)
+                    {
+                        totalOuts += (curhand.getStraightOuts() - 1);
+                    }
+                    else
+                    {
+                        totalOuts += curhand.getStraightOuts();
+                    }
+                }
+
+                curhand.setTotalOuts(totalOuts);
 
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
 
                 Coach ourCoach = new Coach(1);
 
-                txtCoach.Text += ourCoach.postFlopDecision(curhand);
+                txtCoach.Text += "Turn Decision: " + ourCoach.postTurnDecision(curhand, (double)numPotSize.Value, (double)numCostToPlay.Value, (double)numChipCount.Value);
                 txtCoach.SelectionStart = txtStatus.Text.Length;
                 txtCoach.ScrollToCaret();
             }
@@ -310,7 +341,7 @@ namespace Poker_Coach
 
                 Coach ourCoach = new Coach(1);
 
-                txtCoach.Text += ourCoach.postFlopDecision(curhand);
+                //txtCoach.Text += ourCoach.postFlopDecision(curhand);
                 txtCoach.SelectionStart = txtStatus.Text.Length;
                 txtCoach.ScrollToCaret();
             }
