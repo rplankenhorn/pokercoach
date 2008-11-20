@@ -1038,12 +1038,12 @@
         private System.Windows.Forms.NumericUpDown numPosition;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown numPotSize;
+        public System.Windows.Forms.NumericUpDown numPotSize;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown numChipCount;
+        public System.Windows.Forms.NumericUpDown numChipCount;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown numCostToPlay;
+        public System.Windows.Forms.NumericUpDown numCostToPlay;
     }
 }
 

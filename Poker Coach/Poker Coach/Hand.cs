@@ -27,6 +27,7 @@ namespace Poker_Coach
         private Boolean flushDraw;
 
         private int[] numOfOuts;
+        private int totalOuts;
 
         /**
          * High Card = 0;
@@ -78,11 +79,22 @@ namespace Poker_Coach
             flushDraw = false;
 
             numOfOuts = new int[10];
+            totalOuts = 0;
 
             for (int i = 0; i < 10; i++)
             {
                 numOfOuts[i] = 0;
             }
+        }
+
+        public void setTotalOuts(int total)
+        {
+            totalOuts = total;
+        }
+
+        public int getTotalOuts()
+        {
+            return totalOuts;
         }
 
         public Boolean getFlushDraw()
