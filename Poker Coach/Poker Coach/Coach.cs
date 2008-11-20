@@ -9,10 +9,127 @@ namespace Poker_Coach
     {
         private int risk;
 
+        private double[] postFlopPercent;
+        private double[] postFlopOdds;
+        private double[] postTurnPercent;
+        private double[] postTurnOdds;
 
         public Coach(int ourRisk)
         {
             risk = ourRisk;
+
+            postFlopPercent = new double[21];
+            postFlopOdds = new double[21];
+            postTurnPercent = new double[21];
+            postTurnOdds = new double[21];
+
+            postFlopPercent[0] = 0;
+            postFlopPercent[1] = 4.3;
+            postFlopPercent[2] = 8.4;
+            postFlopPercent[3] = 12.5;
+            postFlopPercent[4] = 16.5;
+            postFlopPercent[5] = 20.3;
+            postFlopPercent[6] = 24.1;
+            postFlopPercent[7] = 27.8;
+            postFlopPercent[8] = 31.5;
+            postFlopPercent[9] = 35.0;
+            postFlopPercent[10] = 38.4;
+            postFlopPercent[11] = 41.7;
+            postFlopPercent[12] = 45.0;
+            postFlopPercent[13] = 48.1;
+            postFlopPercent[14] = 51.2;
+            postFlopPercent[15] = 54.1;
+            postFlopPercent[16] = 57.0;
+            postFlopPercent[17] = 59.8;
+            postFlopPercent[18] = 62.4;
+            postFlopPercent[19] = 65.0;
+            postFlopPercent[20] = 67.5;
+
+            postFlopOdds[0] = 0;
+            postFlopOdds[1] = 22.26;
+            postFlopOdds[2] = 10.90;
+            postFlopOdds[3] = 7.00;
+            postFlopOdds[4] = 5.06;
+            postFlopOdds[5] = 3.93;
+            postFlopOdds[6] = 3.15;
+            postFlopOdds[7] = 2.60;
+            postFlopOdds[8] = 2.17;
+            postFlopOdds[9] = 1.86;
+            postFlopOdds[10] = 1.60;
+            postFlopOdds[11] = 1.40;
+            postFlopOdds[12] = 1.22;
+            postFlopOdds[13] = 1.08;
+            postFlopOdds[14] = 0.95;
+            postFlopOdds[15] = 0.85;
+            postFlopOdds[16] = 0.75;
+            postFlopOdds[17] = 0.67;
+            postFlopOdds[18] = 0.60;
+            postFlopOdds[19] = 0.54;
+            postFlopOdds[20] = 0.48;
+
+            postTurnPercent[0] = 0;
+            postTurnPercent[1] = 2.2;
+            postTurnPercent[2] = 4.3;
+            postTurnPercent[3] = 6.5;
+            postTurnPercent[4] = 8.7;
+            postTurnPercent[5] = 10.9;
+            postTurnPercent[6] = 13.0;
+            postTurnPercent[7] = 15.2;
+            postTurnPercent[8] = 17.4;
+            postTurnPercent[9] = 19.6;
+            postTurnPercent[10] = 21.7;
+            postTurnPercent[11] = 23.9;
+            postTurnPercent[12] = 26.1;
+            postTurnPercent[13] = 28.3;
+            postTurnPercent[14] = 30.4;
+            postTurnPercent[15] = 32.6;
+            postTurnPercent[16] = 34.8;
+            postTurnPercent[17] = 37.0;
+            postTurnPercent[18] = 39.1;
+            postTurnPercent[19] = 41.3;
+            postTurnPercent[20] = 43.5;
+
+            postTurnOdds[0] = 0;
+            postTurnOdds[1] = 45.00;
+            postTurnOdds[2] = 22.00;
+            postTurnOdds[3] = 14.33;
+            postTurnOdds[4] = 10.50;
+            postTurnOdds[5] = 8.20;
+            postTurnOdds[6] = 6.67;
+            postTurnOdds[7] = 5.57;
+            postTurnOdds[8] = 4.75;
+            postTurnOdds[9] = 4.11;
+            postTurnOdds[10] = 3.60;
+            postTurnOdds[11] = 3.18;
+            postTurnOdds[12] = 2.83;
+            postTurnOdds[13] = 2.54;
+            postTurnOdds[14] = 2.29;
+            postTurnOdds[15] = 2.07;
+            postTurnOdds[16] = 1.88;
+            postTurnOdds[17] = 1.71;
+            postTurnOdds[18] = 1.56;
+            postTurnOdds[19] = 1.42;
+            postTurnOdds[20] = 1.30;
+        }
+
+        public double drawingDecisionPostFlopPercent(int outs)
+        {
+            return postFlopPercent[outs];
+        }
+
+        public double drawingDecisionPostFlopOdds(int outs)
+        {
+            return postFlopOdds[outs];
+        }
+
+        public double drawingDecisionPostTurnPercent(int outs)
+        {
+            return postTurnPercent[outs];
+        }
+
+        public double drawingDecisionPostTurnOdds(int outs)
+        {
+            return postTurnOdds[outs];
         }
 
         public double preFlopCalc(double percentWin, double ourStack, double potSize, int ourPosition, double costToPlay, int totalPlayers)
@@ -22,8 +139,6 @@ namespace Poker_Coach
             value = (((percentWin - 7.28) / (39.05 - 7.28)) * 30 * risk) + ((potSize / (/*potSize +*/costToPlay + 2)) * risk * 2) + (((double)ourPosition / (double)totalPlayers) * 10);
 
             return value;
-
-
         }
 
         public string preFlopDecision(double value, double costToPlay)
@@ -94,14 +209,5 @@ namespace Poker_Coach
                 return "You have the best hand in poker!!! Try to encourage action and bask in the glory of a hand that comes only a few times in a lifetime.\r\n\r";
             }
         }
-
-
-
-
-
-
-
-
-
     }
 }

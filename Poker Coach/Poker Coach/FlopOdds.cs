@@ -427,8 +427,36 @@ namespace Poker_Coach
                 r.setStraightOuts(4);
                 return r;
             }
-            else if(sorted[0].getValueInt()-1 == sorted[1].getValueInt() && 
-                sorted[1].getValueInt()-1 == sorted[2].getValueInt() && sorted[2].getValueInt()-1 == sorted[3].getValueInt())
+            else if (sorted[1].getValueInt() == 4 && sorted[2].getValueInt() == 3 && sorted[3].getValueInt() == 2
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else if (sorted[0].getValueInt() == 4 && sorted[1].getValueInt() == 3 && sorted[2].getValueInt() == 2
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else if (sorted[0].getValueInt() == 4 && sorted[1].getValueInt() == 3 && sorted[3].getValueInt() == 2
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else if (sorted[0].getValueInt() == 4 && sorted[2].getValueInt() == 3 && sorted[3].getValueInt() == 2
+                && sorted[4].getValueInt() == 1)
+            {
+                r.setFourCardStraight(true);
+                r.setStraightOuts(4);
+                return r;
+            }
+            else if (sorted[0].getValueInt() - 1 == sorted[1].getValueInt() &&
+                sorted[1].getValueInt() - 1 == sorted[2].getValueInt() && sorted[2].getValueInt() - 1 == sorted[3].getValueInt())
             {
                 r.setFourCardStraight(true);
                 r.setStraightOuts(8);
@@ -467,9 +495,9 @@ namespace Poker_Coach
             }
             /*
              * X6432
-             */ 
-            else if (sorted[1].getValueInt()-2 == sorted[2].getValueInt() &&
-                sorted[2].getValueInt()-1 == sorted[3].getValueInt() && sorted[3].getValueInt()-1 == sorted[4].getValueInt())
+             */
+            else if (sorted[1].getValueInt() - 2 == sorted[2].getValueInt() &&
+                sorted[2].getValueInt() - 1 == sorted[3].getValueInt() && sorted[3].getValueInt() - 1 == sorted[4].getValueInt())
             {
                 r.setFourCardStraight(false);
                 r.setGappedStraight(true);
@@ -479,8 +507,8 @@ namespace Poker_Coach
             /*
              * 6432X
              */
-            else if (sorted[0].getValueInt()-2 == sorted[1].getValueInt() &&
-                sorted[1].getValueInt()-1 == sorted[2].getValueInt() && sorted[2].getValueInt()-1 == sorted[3].getValueInt())
+            else if (sorted[0].getValueInt() - 2 == sorted[1].getValueInt() &&
+                sorted[1].getValueInt() - 1 == sorted[2].getValueInt() && sorted[2].getValueInt() - 1 == sorted[3].getValueInt())
             {
                 r.setFourCardStraight(false);
                 r.setGappedStraight(true);
@@ -490,8 +518,8 @@ namespace Poker_Coach
             /*
              * X6532
              */
-            else if (sorted[1].getValueInt()-1 == sorted[2].getValueInt() &&
-                sorted[2].getValueInt()-2 == sorted[3].getValueInt() && sorted[3].getValueInt()-1 == sorted[4].getValueInt())
+            else if (sorted[1].getValueInt() - 1 == sorted[2].getValueInt() &&
+                sorted[2].getValueInt() - 2 == sorted[3].getValueInt() && sorted[3].getValueInt() - 1 == sorted[4].getValueInt())
             {
                 r.setFourCardStraight(false);
                 r.setGappedStraight(true);
@@ -501,8 +529,8 @@ namespace Poker_Coach
             /*
              * 6532X
              */
-            else if (sorted[0].getValueInt()-1 == sorted[1].getValueInt() &&
-                sorted[1].getValueInt()-2 == sorted[2].getValueInt() && sorted[2].getValueInt()-1 == sorted[3].getValueInt())
+            else if (sorted[0].getValueInt() - 1 == sorted[1].getValueInt() &&
+                sorted[1].getValueInt() - 2 == sorted[2].getValueInt() && sorted[2].getValueInt() - 1 == sorted[3].getValueInt())
             {
                 r.setFourCardStraight(false);
                 r.setGappedStraight(true);
@@ -512,8 +540,8 @@ namespace Poker_Coach
             /*
              * X6542
              */
-            else if (sorted[1].getValueInt()-1 == sorted[2].getValueInt() &&
-                sorted[2].getValueInt()-1 == sorted[3].getValueInt() && sorted[3].getValueInt()-2 == sorted[4].getValueInt())
+            else if (sorted[1].getValueInt() - 1 == sorted[2].getValueInt() &&
+                sorted[2].getValueInt() - 1 == sorted[3].getValueInt() && sorted[3].getValueInt() - 2 == sorted[4].getValueInt())
             {
                 r.setFourCardStraight(false);
                 r.setGappedStraight(true);
