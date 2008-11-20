@@ -119,9 +119,9 @@
             this.groupBox1.Controls.Add(this.cbbxCardSuit1);
             this.groupBox1.Controls.Add(this.cbbxCardValue1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(206, 121);
+            this.groupBox1.Location = new System.Drawing.Point(206, 96);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 89);
+            this.groupBox1.Size = new System.Drawing.Size(288, 114);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Cards";
@@ -129,9 +129,9 @@
             // cmdHoleUpdate
             // 
             this.cmdHoleUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmdHoleUpdate.Location = new System.Drawing.Point(162, 24);
+            this.cmdHoleUpdate.Location = new System.Drawing.Point(155, 24);
             this.cmdHoleUpdate.Name = "cmdHoleUpdate";
-            this.cmdHoleUpdate.Size = new System.Drawing.Size(120, 55);
+            this.cmdHoleUpdate.Size = new System.Drawing.Size(127, 69);
             this.cmdHoleUpdate.TabIndex = 4;
             this.cmdHoleUpdate.Text = "Update";
             this.cmdHoleUpdate.UseVisualStyleBackColor = true;
@@ -154,7 +154,7 @@
             "Diamonds",
             "Hearts",
             "Spades"});
-            this.cbbxCardSuit2.Location = new System.Drawing.Point(55, 58);
+            this.cbbxCardSuit2.Location = new System.Drawing.Point(55, 72);
             this.cbbxCardSuit2.Name = "cbbxCardSuit2";
             this.cbbxCardSuit2.Size = new System.Drawing.Size(85, 21);
             this.cbbxCardSuit2.TabIndex = 3;
@@ -177,7 +177,7 @@
             "Q",
             "K",
             "A"});
-            this.cbbxCardValue2.Location = new System.Drawing.Point(12, 58);
+            this.cbbxCardValue2.Location = new System.Drawing.Point(12, 72);
             this.cbbxCardValue2.Name = "cbbxCardValue2";
             this.cbbxCardValue2.Size = new System.Drawing.Size(37, 21);
             this.cbbxCardValue2.TabIndex = 2;
@@ -775,7 +775,7 @@
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
             this.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtStatus.Size = new System.Drawing.Size(241, 64);
+            this.txtStatus.Size = new System.Drawing.Size(377, 93);
             this.txtStatus.TabIndex = 6;
             // 
             // groupBox7
@@ -783,9 +783,9 @@
             this.groupBox7.BackColor = System.Drawing.Color.DarkRed;
             this.groupBox7.Controls.Add(this.txtStatus);
             this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox7.Location = new System.Drawing.Point(494, 121);
+            this.groupBox7.Location = new System.Drawing.Point(494, 96);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(254, 89);
+            this.groupBox7.Size = new System.Drawing.Size(389, 114);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Status";
@@ -831,7 +831,7 @@
             this.groupBox8.Controls.Add(this.numChipCount);
             this.groupBox8.Controls.Add(this.label16);
             this.groupBox8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox8.Location = new System.Drawing.Point(206, 26);
+            this.groupBox8.Location = new System.Drawing.Point(206, 1);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(447, 89);
             this.groupBox8.TabIndex = 6;

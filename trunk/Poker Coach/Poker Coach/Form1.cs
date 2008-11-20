@@ -95,6 +95,13 @@ namespace Poker_Coach
                 if (temp.getFourCardStraight() && !curhand.getStraight())
                 {
                     curhand.setFourCardStraight(true);
+                    curhand.setStraightOuts(temp.getStraightOuts());
+                }
+
+                if (temp.getGappedStraight() && !curhand.getStraight())
+                {
+                    curhand.setGappedStraight(true);
+                    curhand.setStraightOuts(temp.getStraightOuts());
                 }
 
                 temp = flpodds.determineFlushDraw(holecards, community);
@@ -102,19 +109,46 @@ namespace Poker_Coach
                 if (temp.getFlushDraw() && !curhand.getFlush())
                 {
                     curhand.setFlushDraw(true);
+                    curhand.setFlushOuts(temp.getFlushOuts());
                 }
 
                 txtStatus.Text += "\r\nYou have: " + curhand.ToString() + " post flop\r\n";
+                int totalOuts = 0;
 
                 if (curhand.getFlushDraw())
                 {
-                    txtStatus.Text += "You also have a flush draw.\r\n";
+                    txtStatus.Text += "You also have a flush draw with " + curhand.getFlushOuts() + " outs.\r\n";
+                    totalOuts += curhand.getFlushOuts();
                 }
 
                 if (curhand.getFourCardStraight())
                 {
-                    txtStatus.Text += "You also have a straight draw.\r\n";
+                    txtStatus.Text += "You also have a straight draw " + curhand.getStraightOuts() + " outs.\r\n";
+
+                    if (totalOuts > 0)
+                    {
+                        totalOuts += (curhand.getStraightOuts() - 1);
+                    }
+                    else
+                    {
+                        totalOuts += curhand.getStraightOuts();
+                    }
                 }
+                else if (curhand.getGappedStraight())
+                {
+                    txtStatus.Text += "You also have a straight draw " + curhand.getStraightOuts() + " outs.\r\n";
+
+                    if (totalOuts > 0)
+                    {
+                        totalOuts += (curhand.getStraightOuts() - 1);
+                    }
+                    else
+                    {
+                        totalOuts += curhand.getStraightOuts();
+                    }
+                }
+
+                txtStatus.Text += "        with your total outs equalling " + totalOuts + ".";
 
                 txtStatus.SelectionStart = txtStatus.Text.Length;
                 txtStatus.ScrollToCaret();
